@@ -49,10 +49,8 @@ source ~/.zshkeys
 VISUAL=vim
 EDITOR=vim
 bindkey -v
-bindkey -M vicmd '?' history-incremental-search-backward
-bindkey -M vicmd '/' history-incremental-search-forward
-bindkey '^[[A' up-line-or-search
-bindkey '^[[B' down-line-or-search
+bindkey -M viins '^R' history-incremental-search-backward
+bindkey -M vicmd '^R' history-incremental-search-backward
 
 # Disallow antiquated ctrl-q/ctrl-s
 stty stop undef
