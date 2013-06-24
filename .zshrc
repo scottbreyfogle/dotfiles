@@ -41,7 +41,7 @@ source $ZSH/oh-my-zsh.sh
 ########################################################
 
 # Arch linux guess package
-source /usr/share/doc/pkgfile/command-not-found.zsh
+# source /usr/share/doc/pkgfile/command-not-found.zsh
 # Fix special keys
 source ~/.zshkeys
 
@@ -51,6 +51,8 @@ EDITOR=vim
 bindkey -v
 bindkey -M vicmd '?' history-incremental-search-backward
 bindkey -M vicmd '/' history-incremental-search-forward
+bindkey '^[[A' up-line-or-search
+bindkey '^[[B' down-line-or-search
 
 # Disallow antiquated ctrl-q/ctrl-s
 stty stop undef
@@ -59,7 +61,7 @@ stty -ixon
 stty -ixoff
 
 # Everyone likes talking computers
-function say { mplayer "http://translate.google.com/translate_tts?tl=en&q=$1" > /dev/null }
+# function say { mplayer "http://translate.google.com/translate_tts?tl=en&q=$1" > /dev/null }
 
 export PYTHONPATH=/usr/lib/python3.3/site-packages
 export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/java/bin:/opt/java/db/bin:/opt/java/jre/bin:/usr/bin/core_perl
