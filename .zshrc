@@ -63,3 +63,5 @@ stty -ixoff
 
 export PYTHONPATH=/usr/lib/python3.3/site-packages
 export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/java/bin:/opt/java/db/bin:/opt/java/jre/bin:/usr/bin/core_perl
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
