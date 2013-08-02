@@ -62,6 +62,5 @@ stty -ixoff
 # function say { mplayer "http://translate.google.com/translate_tts?tl=en&q=$1" > /dev/null }
 
 export PYTHONPATH=/usr/lib/python3.3/site-packages
-export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/java/bin:/opt/java/db/bin:/opt/java/jre/bin:/usr/bin/core_perl
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/java/bin:/opt/java/db/bin:/opt/java/jre/bin:/usr/bin/core_perl:$HOME/.rvm/bin:$HOME/go_appengine
+export GOPATH=/Users/scott/go
