@@ -60,6 +60,9 @@ autocmd FileType c setlocal foldmethod=syntax
 autocmd FileType c setlocal foldnestmax=1
 autocmd FileType go setlocal foldmethod=syntax
 autocmd FileType go setlocal foldnestmax=1
+set foldlevelstart=20
+nnoremap <space> za
+vnoremap <space> zf
 
 " Line Numbering with F2 toggle
 set number
@@ -67,10 +70,6 @@ nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
 " More syntax 
 autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
-
-" Folding
-nnoremap <space> za
-vnoremap <space> zf
 
 " Tab settings
 set expandtab
