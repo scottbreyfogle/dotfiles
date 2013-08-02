@@ -17,3 +17,6 @@
     st = status
     co = checkout
     br = branch
+    d  = diff
+    rd = diff HEAD
+    ld = diff HEAD HEAD~1
