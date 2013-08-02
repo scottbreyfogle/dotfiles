@@ -85,6 +85,11 @@ autocmd FileType html setlocal softtabstop=2
 :imap kk <Esc>
 :imap kj <Esc>
 
+" Add keywords for more accurate w and b movement
+set iskeyword-=(
+set iskeyword-=)
+set iskeyword-=.
+
 " Colorscheme
 " set background=light
 " colorscheme solarized
