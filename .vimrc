@@ -78,6 +78,7 @@ set softtabstop=4
 set shiftwidth=4
 autocmd FileType go setlocal noexpandtab 
 autocmd FileType html setlocal softtabstop=2
+autocmd FileType scala setlocal softtabstop=2
 
 " Auto exit to command mode on permutations of j and k
 :imap jk <Esc>
