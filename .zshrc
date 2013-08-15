@@ -32,7 +32,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(archlinux git pip systemd vi-mode)
+plugins=(archlinux command-not-found extract gem git golang pip systemd tmux vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -40,8 +40,6 @@ source $ZSH/oh-my-zsh.sh
 ################## My Config ###########################
 ########################################################
 
-# Arch linux guess package
-# source /usr/share/doc/pkgfile/command-not-found.zsh
 # Fix special keys
 source ~/.zshkeys
 
