@@ -5,10 +5,10 @@ set nocompatible
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
+set history=50   " keep 50 lines of command line history
+set ruler        " show the cursor position all the time
+set showcmd      " display incomplete commands
+set incsearch    " do incremental searching
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
@@ -50,7 +50,7 @@ autocmd BufReadPost *
 " Only define it when not defined already.
 if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
+  \ | wincmd p | diffthis
 endif
 
 " Folding
@@ -77,8 +77,12 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 autocmd FileType go setlocal noexpandtab 
+autocmd FileType html setlocal tabstop=2
 autocmd FileType html setlocal softtabstop=2
+autocmd FileType html setlocal shiftwidth=2
+autocmd FileType scala setlocal tabstop=2
 autocmd FileType scala setlocal softtabstop=2
+autocmd FileType scala setlocal shiftwidth=2
 
 " Auto exit to command mode on permutations of j and k
 :imap jk <Esc>
