@@ -96,5 +96,10 @@ set iskeyword-=)
 set iskeyword-=.
 
 " Colorscheme
-" set background=light
-" colorscheme solarized
+set background=dark
+let g:solarized_termtrans=1
+colorscheme solarized
+
+" Pathogen
+execute pathogen#infect()
+execute pathogen#helptags()
