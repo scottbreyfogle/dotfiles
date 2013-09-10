@@ -47,8 +47,14 @@ source ~/.zshkeys
 VISUAL=vim
 EDITOR=vim
 bindkey -v
+
+# Reintroduce some emacs commands (for shame) (and convenience)
 bindkey -M viins '^R' history-incremental-search-backward
 bindkey -M vicmd '^R' history-incremental-search-backward
+bindkey -M viins '^A' beginning-of-line
+bindkey -M vicmd '^A' beginning-of-line
+bindkey -M viins '^E' end-of-line
+bindkey -M vicmd '^E' end-of-line
 
 # Disallow antiquated ctrl-q/ctrl-s
 stty stop undef
