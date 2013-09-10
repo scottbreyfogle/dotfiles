@@ -3,10 +3,10 @@
 	url = git@github.com:scottbreyfogle/oh-my-zsh.git
 [submodule "/Users/scott/.vim/bundle/vim-fugitive"]
 	path = /Users/scott/.vim/bundle/vim-fugitive
-	url = git@github.com:tpope/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
 [submodule "/Users/scott/.vim/bundle/vim-airline"]
 	path = /Users/scott/.vim/bundle/vim-airline
-	url = git@github.com:bling/vim-airline
+	url = https://github.com/bling/vim-airline
 [submodule "/Users/scott/.vim/bundle/vim-go"]
 	path = /Users/scott/.vim/bundle/vim-go
 	url = https://github.com/uggedal/go-vim
