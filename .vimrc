@@ -90,6 +90,12 @@ autocmd FileType scala setlocal shiftwidth=2
 :imap kk <Esc>
 :imap kj <Esc>
 
+" Bastardization from too much emacs mode bash
+:map <C-a> <Home>
+:map <C-e> <End>
+:imap <C-a> <Home>
+:imap <C-e> <End>
+
 " Add keywords for more accurate w and b movement
 set iskeyword-=(
 set iskeyword-=)
