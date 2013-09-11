@@ -1,24 +1,24 @@
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = git@github.com:scottbreyfogle/oh-my-zsh.git
-[submodule "/Users/scott/.vim/bundle/vim-fugitive"]
-	path = /Users/scott/.vim/bundle/vim-fugitive
+[submodule ".vim/bundle/vim-fugitive"]
+	path = .vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
-[submodule "/Users/scott/.vim/bundle/vim-airline"]
-	path = /Users/scott/.vim/bundle/vim-airline
+[submodule ".vim/bundle/vim-airline"]
+	path = .vim/bundle/vim-airline
 	url = https://github.com/bling/vim-airline
-[submodule "/Users/scott/.vim/bundle/vim-go"]
-	path = /Users/scott/.vim/bundle/vim-go
+[submodule ".vim/bundle/vim-go"]
+	path = .vim/bundle/vim-go
 	url = https://github.com/uggedal/go-vim
-[submodule "/Users/scott/.vim/bundle/vim-scala"]
-	path = /Users/scott/.vim/bundle/vim-scala
+[submodule ".vim/bundle/vim-scala"]
+	path = .vim/bundle/vim-scala
 	url = https://github.com/derekwyatt/vim-scala
-[submodule "/Users/scott/.vim/bundle/nerdtree"]
-	path = /Users/scott/.vim/bundle/nerdtree
+[submodule ".vim/bundle/nerdtree"]
+	path = .vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree
-[submodule "/Users/scott/.vim/bundle/ctrlp"]
-	path = /Users/scott/.vim/bundle/ctrlp
+[submodule ".vim/bundle/ctrlp"]
+	path = .vim/bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim
-[submodule "/Users/scott/.vim/bundle/syntastic"]
-	path = /Users/scott/.vim/bundle/syntastic
+[submodule ".vim/bundle/syntastic"]
+	path = .vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
