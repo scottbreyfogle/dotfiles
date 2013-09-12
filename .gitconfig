@@ -1,24 +1,26 @@
+# vim: noexpandtab
 [core]
-    editor = vim
+	editor = vim
+	excludesfile = /home/feanor/.global_ignore
 [color]
-    ui = true
+	ui = true
 [merge]
-    tool = vimdiff
-    conflictstyle = diff3
+	tool = vimdiff
+	conflictstyle = diff3
 [user]
-    email = swb02009@mymail.pomona.edu
-    name = Scott Breyfogle
+	email = swb02009@mymail.pomona.edu
+	name = Scott Breyfogle
 [push]
-    default = matching
+	default = matching
 [alias]
-    ls = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
-    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-    ci = commit
-    st = status
-    co = checkout
-    br = branch
-    d  = diff
-    rd = diff HEAD
-    ld = diff HEAD HEAD~1
+	ls = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	ci = commit
+	st = status
+	co = checkout
+	br = branch
+	d  = diff
+	rd = diff HEAD
+	ld = diff HEAD HEAD~1
 [diff]
-    tool = vimdiff
+	tool = vimdiff

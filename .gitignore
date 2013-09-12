@@ -1,5 +1,6 @@
 *
 !.git*
+!.global_ignore
 !.oh-my-zsh
 !.ssh*
 !.tmux.conf
