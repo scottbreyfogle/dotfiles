@@ -64,6 +64,11 @@ stty -ixoff
 
 # Aliases
 alias git=hub
+function keys {
+    scp feanor:~/.ssh/id_rsa .ssh
+    scp feanor:~/.ssh/id_rsa.pub .ssh
+    scp feanor:~/.ssh/authorized_keys .ssh
+}
 # Everyone likes talking computers
 if ((! type say) && type mplayer) > /dev/null; then
     function say { mplayer "http://translate.google.com/translate_tts?tl=en&q=$1" > /dev/null }
