@@ -53,6 +53,13 @@ if !exists(":DiffOrig")
   \ | wincmd p | diffthis
 endif
 
+" BEGIN MY CHANGES
+
+" Colorscheme
+set background=dark
+let g:solarized_termtrans=1 " Fixes weird blocky issues with solarized vim in solarized consoles
+colorscheme solarized
+
 " Folding
 autocmd FileType python setlocal foldmethod=indent
 autocmd FileType python setlocal foldnestmax=2
@@ -64,25 +71,40 @@ set foldlevelstart=20
 nnoremap <space> za
 vnoremap <space> zf
 
-" Line Numbering with F2 toggle
+" Line Numbering
 set number
-nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
-" More syntax 
+" Toggle line numbering (for copying) and paste mode on F2
+nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>:set paste!<CR>
+
+" More syntax
 autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
 
 " Tab settings
-set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-autocmd FileType go setlocal noexpandtab 
-autocmd FileType html setlocal tabstop=2
+set expandtab      " Use Spaces instaed of tabs
+set tabstop=4      " Tabs displayed as 4 spaces (for go, other tabbed stuff)
+set softtabstop=4  " Tab key inserts 4 spaces
+set shiftwidth=4   " << and >> shift 4 spaces
+autocmd FileType go setlocal noexpandtab      # Go Tabs
 autocmd FileType html setlocal softtabstop=2
 autocmd FileType html setlocal shiftwidth=2
-autocmd FileType scala setlocal tabstop=2
 autocmd FileType scala setlocal softtabstop=2
 autocmd FileType scala setlocal shiftwidth=2
+
+" End of line whitepace highlighting
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+
+" Highlight out of place tabs or spaces
+highlight BadTabs ctermbg=red guibg=red
+highlight BadSpaces ctermbg=red guibg=red
+match BadTabs /\t/
+match BadSpaces //
+autocmd FileType go match BadTabs //
+autocmd FileType go match BadSpaces /^\t*\zs \+/
 
 " Auto exit to command mode on permutations of j and k
 :imap jk <Esc>
@@ -101,10 +123,8 @@ set iskeyword-=(
 set iskeyword-=)
 set iskeyword-=.
 
-" Colorscheme
-set background=dark
-let g:solarized_termtrans=1
-colorscheme solarized
+" Airline
+:set laststatus=2
 
 " Pathogen
 execute pathogen#infect()
