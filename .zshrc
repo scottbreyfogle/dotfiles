@@ -68,6 +68,7 @@ function keys {
     scp feanor:~/.ssh/id_rsa .ssh
     scp feanor:~/.ssh/id_rsa.pub .ssh
     scp feanor:~/.ssh/authorized_keys .ssh
+    ssh-add ~/.ssh/id_rsa
 }
 # Everyone likes talking computers
 if ((! type say) && type mplayer) > /dev/null; then
