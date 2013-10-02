@@ -2,6 +2,7 @@
 !.git*
 !.global_ignore
 !.oh-my-zsh
+!.solarized
 !.ssh*
 !.tmux.conf
 !.vim

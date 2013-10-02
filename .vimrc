@@ -56,11 +56,6 @@ endif
 
 " BEGIN MY CHANGES
 
-" Colorscheme
-set background=dark
-let g:solarized_termtrans=1 " Fixes weird blocky issues with solarized vim in solarized consoles
-colorscheme solarized
-
 " Folding
 autocmd FileType python setlocal foldmethod=indent
 autocmd FileType python setlocal foldnestmax=2
@@ -130,3 +125,8 @@ set iskeyword-=.
 " Pathogen
 execute pathogen#infect()
 execute pathogen#helptags()
+
+" Colorscheme
+set background=dark
+let g:solarized_termtrans=1 " Fixes weird blocky issues with solarized vim in solarized consoles
+colorscheme solarized
