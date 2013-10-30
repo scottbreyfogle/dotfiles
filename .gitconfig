@@ -20,7 +20,7 @@
 	co = checkout
 	br = branch
 	d  = diff
-	rd = diff HEAD
-	ld = diff HEAD HEAD~1
+	hd = diff HEAD
+	ld = diff HEAD~1 HEAD
 [diff]
 	tool = vimdiff
