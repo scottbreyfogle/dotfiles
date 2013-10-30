@@ -56,16 +56,37 @@ endif
 
 " BEGIN MY CHANGES
 
+" Show zsh style autocomplete for : commands
+set wildmenu
+set wildmode=list:longest
+" Cursor grid
+set cursorline
+set cursorcolumn
 " Folding
 set foldlevelstart=20
 nnoremap <space> za
 vnoremap <space> zf
-
-" Line Numbering
+" Line Numbering for current line, relative for others
 set number
+set relativenumber
+" Always show status bar
+:set laststatus=2
+" Intelligent case sensitivity (all lowercase is insensitive, any
+" capitalization make search case sensitive)
+set ignorecase
+set smartcase
+" Default global substitustion on lines
+set gdefault
+" Keep some lines above and below the cursor
+set scrolloff=2
+" Tab for missing braces
+noremap <tab> %
 
+" Leader commands
+let mapleader = ","
 " Toggle line numbering (for copying) and paste mode on F2
-nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>:set paste!<CR>
+nnoremap <leader>p :set nonumber!<CR>:set foldcolumn=0<CR>:set paste!<CR>
+nnoremap <leader><space> :nohlsearch<cr>
 
 " Tab settings
 set expandtab      " Use Spaces instaed of tabs
@@ -91,9 +112,6 @@ autocmd FileType html,scala,coffee,*.ejs setlocal shiftwidth=2
 set iskeyword-=(
 set iskeyword-=)
 set iskeyword-=.
-
-" Airline
-:set laststatus=2
 
 " Pathogen
 execute pathogen#infect()
