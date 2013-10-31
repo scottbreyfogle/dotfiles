@@ -103,8 +103,6 @@ autocmd FileType html,scala,coffee,*.ejs setlocal shiftwidth=2
 :imap kj <Esc>
 
 " Bastardization from too much emacs mode bash
-:map <C-a> <Home>
-:map <C-e> <End>
 :imap <C-a> <Home>
 :imap <C-e> <End>
 
