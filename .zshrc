@@ -63,7 +63,10 @@ stty -ixon
 stty -ixoff
 
 # Aliases
-alias g="git "
+alias g=git
+compdef g=git
+alias v=vim
+compdef v=vim
 alias zrc="$EDITOR ~/.zshrc"
 alias vrc="$EDITOR ~/.vimrc"
 function keys {

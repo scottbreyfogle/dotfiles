@@ -85,7 +85,7 @@ noremap <tab> %
 " Leader commands
 let mapleader = ","
 " Toggle line numbering (for copying) and paste mode on F2
-nnoremap <leader>p :set nonumber!<CR>:set foldcolumn=0<CR>:set paste!<CR>
+nnoremap <leader>p :set number!<CR>:set relativenumber!<cr>:set foldcolumn=0<CR>:set paste!<CR>
 nnoremap <leader><space> :nohlsearch<cr>
 
 " Tab settings
@@ -132,3 +132,7 @@ highlight BadTabs ctermbg=red guibg=red
 highlight BadSpaces ctermbg=red guibg=red
 match BadTabs /\t/
 match BadSpaces //
+
+" Ideavim bell stuff
+set visualbell
+set noerrorbells
