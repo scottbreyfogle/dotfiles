@@ -47,6 +47,8 @@ source ~/.zshkeys
 VISUAL=vim
 EDITOR=vim
 bindkey -v
+# Prevent lag after hitting escape
+KEYTIMEOUT=1
 
 # Reintroduce some emacs commands (for shame) (and convenience)
 bindkey -M viins '^R' history-incremental-search-backward
