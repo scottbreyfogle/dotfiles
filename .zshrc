@@ -65,8 +65,8 @@ stty -ixon
 stty -ixoff
 
 # Aliases
-alias g=git
-compdef g=git
+alias f="find ."
+alias fn="find . -name"
 alias v=vim
 compdef v=vim
 alias zrc="$EDITOR ~/.zshrc"
