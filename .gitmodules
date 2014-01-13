@@ -41,7 +41,7 @@
 	path = .vim/bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary
 [submodule ".vim/bundle/vim-repeat"]
-	path = .vim/bundle/vim-commentary
+	path = .vim/bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat
 [submodule ".konsole_solarized"]
 	path = .konsole_solarized
