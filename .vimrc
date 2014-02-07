@@ -89,6 +89,7 @@ nnoremap <leader>p :set number!<CR>:set relativenumber!<cr>:set foldcolumn=0<CR>
 nnoremap <leader><space> :nohlsearch<cr>
 nnoremap <leader>v :tabedit ~/.vimrc<cr>
 nnoremap <leader>r :source ~/.vimrc<CR>:exe ":echo 'vimrc reloaded'"<CR>
+nnoremap <leader>ws :w !sudo cat > %<CR>
 
 " Tab settings
 set expandtab      " Use Spaces instaed of tabs

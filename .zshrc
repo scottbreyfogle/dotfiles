@@ -69,14 +69,20 @@ alias l=ls
 alias ll="ls -l"
 alias la="ls -la"
 alias grep=egrep
-alias -g fnr=feanor
-alias -g swb=scottbreyfogle
-alias -g PG=" | egrep"
 alias pg="ps -e | egrep"
 alias f="find ."
 alias fn="find . -name"
+
+alias pacman="sudo pacman"
+alias systemctl="sudo systemctl"
+alias svim="sudo -e"
+
+alias -g fnr=feanor
+alias -g swb=scottbreyfogle
+alias -g PG=" | egrep"
 alias v=vim
 compdef v=vim
+
 alias zrc="$EDITOR ~/.zshrc"
 alias vrc="$EDITOR ~/.vimrc"
 function keys {
