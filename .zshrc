@@ -40,6 +40,8 @@ source $ZSH/oh-my-zsh.sh
 ################## My Config ###########################
 ########################################################
 
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+
 # Fix special keys
 source ~/.zshkeys
 
@@ -47,8 +49,6 @@ source ~/.zshkeys
 VISUAL=vim
 EDITOR=vim
 bindkey -v
-# Prevent lag after hitting escape
-KEYTIMEOUT=1
 
 # Reintroduce some emacs commands (for shame) (and convenience)
 bindkey -M viins '^R' history-incremental-search-backward
@@ -65,6 +65,14 @@ stty -ixon
 stty -ixoff
 
 # Aliases
+alias l=ls
+alias ll="ls -l"
+alias la="ls -la"
+alias grep=egrep
+alias -g fnr=feanor
+alias -g swb=scottbreyfogle
+alias -g PG=" | egrep"
+alias pg="ps -e | egrep"
 alias f="find ."
 alias fn="find . -name"
 alias v=vim

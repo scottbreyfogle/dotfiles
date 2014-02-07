@@ -67,8 +67,8 @@ set foldlevelstart=20
 nnoremap <space> za
 vnoremap <space> zf
 " Line Numbering for current line, relative for others
-set number
 set relativenumber
+set number
 " Always show status bar
 :set laststatus=2
 " Intelligent case sensitivity (all lowercase is insensitive, any
@@ -87,6 +87,8 @@ let mapleader = ","
 " Toggle line numbering (for copying) and paste mode on F2
 nnoremap <leader>p :set number!<CR>:set relativenumber!<cr>:set foldcolumn=0<CR>:set paste!<CR>
 nnoremap <leader><space> :nohlsearch<cr>
+nnoremap <leader>v :tabedit ~/.vimrc<cr>
+nnoremap <leader>r :source ~/.vimrc<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 " Tab settings
 set expandtab      " Use Spaces instaed of tabs
@@ -95,12 +97,6 @@ set softtabstop=4  " Tab key inserts 4 spaces
 set shiftwidth=4   " << and >> shift 4 spaces
 autocmd FileType html,scala,coffee,*.ejs setlocal softtabstop=2
 autocmd FileType html,scala,coffee,*.ejs setlocal shiftwidth=2
-
-" Auto exit to command mode on permutations of j and k
-:imap jk <Esc>
-:imap jj <Esc>
-:imap kk <Esc>
-:imap kj <Esc>
 
 " Bastardization from too much emacs mode bash
 :imap <C-a> <Home>
@@ -120,19 +116,15 @@ set background=dark
 let g:solarized_termtrans=1 " Fixes weird blocky issues with solarized vim in solarized consoles
 colorscheme solarized
 
-" End of line whitepace highlighting
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-
-" Highlight out of place tabs or spaces
-highlight BadTabs ctermbg=red guibg=red
-highlight BadSpaces ctermbg=red guibg=red
-match BadTabs /\t/
-match BadSpaces //
+" Whitespace awareness
+set listchars=tab:▸\ ,trail:⋅
+set list
 
 " Ideavim bell stuff
 set visualbell
 set noerrorbells
+
+" Automatically source .vimrc when it is saved (from vimcasts.org #24)
+if has("autocmd")
+  autocmd! bufwritepost .vimrc source $MYVIMRC
+endif

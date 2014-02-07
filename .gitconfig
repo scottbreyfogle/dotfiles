@@ -1,6 +1,6 @@
 [core]
     editor = vim
-    excludesfile = /home/feanor/.global_ignore
+    excludesfile = .global_ignore
 [color]
     ui = true
 [merge]
@@ -12,6 +12,7 @@
 [push]
     default = matching
 [alias]
+    po = push origin
     ls = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
     ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
     bl = for-each-ref --sort=-committerdate refs/heads/ --format="%(committerdate)%09%(refname:short)%09%(authorname)"
