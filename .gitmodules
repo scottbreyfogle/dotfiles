@@ -46,3 +46,6 @@
 [submodule ".konsole_solarized"]
 	path = .konsole_solarized
 	url = https://github.com/phiggins/konsole-colors-solarized.git
+[submodule ".gnome-terminal-colors-solarized"]
+	path = .gnome-terminal-colors-solarized
+	url = https://github.com/sigurdga/gnome-terminal-colors-solarized.git
