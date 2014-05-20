@@ -2,13 +2,13 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" Pathogen
-execute pathogen#infect()
-
-" Airline?
-set guifont="Ubuntu Mono derivative Powerline"
-let g:airline_powerline_fonts=1
-let g:airline#extensions#tabline#enabled=1
+" At work, or not:
+if filereadable(expand('~/.google/vimrc'))
+  " Google-only
+  source ~/.google/vimrc
+else
+  source ~/.personal/vimrc
+endif
 
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
@@ -19,6 +19,8 @@ autocmd BufReadPost *
 \ if line("'\"") > 1 && line("'\"") <= line("$") |
 \   exe "normal! g`\"" |
 \ endif
+" Change dir to that of current file
+set autochdir
 
 "
 " Cursor display settings
@@ -30,8 +32,11 @@ set ruler
 " Cursor grid
 set cursorline
 set cursorcolumn
+set colorcolumn=80
 " Keep some lines above and below the cursor
 set scrolloff=2
+" Match angle brackets
+set matchpairs+=<:>
 
 "
 " Misc display settings
@@ -41,8 +46,8 @@ set mouse=a
 " Line Numbering for current line, relative for others
 set relativenumber
 set number
-" Wrap after 78 chars
-set textwidth=78
+" Wrap after 80 chars
+set textwidth=80
 " Always show status bar
 set laststatus=2
 
@@ -98,17 +103,16 @@ colorscheme solarized
 " Change default leader key from \ to ,
 let mapleader = ","
 " Toggle line numbering and paste mode, and open all folds
-nnoremap <leader>p :set relativenumber!<cr>:set number!<CR>:set foldcolumn=0<CR>:set paste!<CR>
+nnoremap <leader>p :set relativenumber!<cr>:set number!<cr>:set foldcolumn=0<cr>:set paste!<cr>
 " Clear search highlighting
 nnoremap <leader><space> :nohlsearch<cr>
 " Edit vimrc
 nnoremap <leader>v :tabedit ~/.vimrc<cr>
 " Reload vimrc
-nnoremap <leader>r :source ~/.vimrc<CR>:echo 'vimrc reloaded'<CR>
-" Hack to save file as sudo
-nnoremap <leader>ws :w !sudo cat > %<CR>
-nnoremap <leader>e :tabe 
-" Tab for missing braces
+nnoremap <leader>r :source ~/.vimrc<cr>:echo 'vimrc reloaded'<cr>
+nnoremap <leader>e :tabedit 
+nnoremap <leader>ws :s/\s\+$//<cr>
+" Tab for matching braces
 noremap <tab> %
 " Bastardization from too much emacs mode bash
 imap <C-a> <Home>
@@ -119,15 +123,12 @@ imap <C-e> <End>
 "
 " Use Spaces instaed of tabs
 set expandtab
-" Tabs displayed as 4 spaces (for go, other tabbed stuff)
-set tabstop=4
-" Tab key inserts 4 spaces
-set softtabstop=4
-" << and >> shift 4 spaces
-set shiftwidth=4
-" Set smaller indent levels for certain filetypes
-autocmd FileType html,scala,coffee,*.ejs setlocal softtabstop=2
-autocmd FileType html,scala,coffee,*.ejs setlocal shiftwidth=2
+" Tabs displayed as 2 spaces (for go, other tabbed stuff)
+set tabstop=2
+" Tab key inserts 2 spaces
+set softtabstop=2
+" << and >> shift 2 spaces
+set shiftwidth=2
 
 " Add keywords for more accurate w and b movement
 set iskeyword-=(
