@@ -32,7 +32,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(archlinux command-not-found extract gem git golang pip systemd tmux vi-mode zsh-syntax-highlighting)
+plugins=(command-not-found extract golang pip vi-mode zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -40,7 +40,11 @@ source $ZSH/oh-my-zsh.sh
 ################## My Config ###########################
 ########################################################
 
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+if [[ -a ~/.google/zshrc ]]; then
+  source ~/.google/zshrc
+fi
+
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 
 # Fix special keys
 source ~/.zshkeys
@@ -57,6 +61,8 @@ bindkey -M viins '^A' beginning-of-line
 bindkey -M vicmd '^A' beginning-of-line
 bindkey -M viins '^E' end-of-line
 bindkey -M vicmd '^E' end-of-line
+# Get backspace working after entering and exiting command mode
+bindkey "^?" backward-delete-char
 
 # Disallow antiquated ctrl-q/ctrl-s
 stty stop undef
@@ -72,30 +78,40 @@ alias grep=egrep
 alias pg="ps -e | egrep"
 alias f="find ."
 alias fn="find . -name"
-
-alias pacman="sudo pacman"
-alias systemctl="sudo systemctl"
 alias svim="sudo -e"
-
-alias -g fnr=feanor
-alias -g swb=scottbreyfogle
-alias -g PG=" | egrep"
 alias v=vim
 compdef v=vim
 
+alias install="sudo apt-get install"
+alias update="sudo apt-get update && sudo apt-get upgrade"
+
+# Global aliases
+alias -g bry=breyfogle
+alias -g swb=scottbreyfogle
+alias -g pg="| egrep"
+alias -g pl="2>&1 | less"
+
+# Edit configs
+alias zre="source ~/.zshrc"
 alias zrc="$EDITOR ~/.zshrc"
 alias vrc="$EDITOR ~/.vimrc"
+alias xrc="vim -p ~/.xmonad/xmonad.hs ~/.xmobarrc"
+
 function keys {
     scp feanor:~/.ssh/id_rsa .ssh
     scp feanor:~/.ssh/id_rsa.pub .ssh
     scp feanor:~/.ssh/authorized_keys .ssh
     ssh-add ~/.ssh/id_rsa
 }
+
+# History
+HISTSIZE=15000
+SAVEHIST=10000
+HIST_EXPIRE_DUPS_FIRST=true # Remove duplicate commands (I'm looking at you ls) first
+HIST_FIND_NO_DUPS=true # Generally don't want to find the same command multiple times
+HIST_IGNORE_SPACE=true # Easy way to avoid logging a command: start it with a space
+
 # Everyone likes talking computers
 if ((! type say) && type mplayer) > /dev/null; then
     function say { mplayer "http://translate.google.com/translate_tts?tl=en&q=$1" > /dev/null }
 fi
-
-export PYTHONPATH=/usr/lib/python3.3/site-packages
-export PATH=$PATH:/opt/java/bin:/opt/java/db/bin:/opt/java/jre/bin:/usr/bin/core_perl:$HOME/bin:$HOME/.rvm/bin:$HOME/go_appengine
-export GOPATH=$HOME/go
