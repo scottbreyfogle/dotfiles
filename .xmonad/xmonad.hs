@@ -6,18 +6,22 @@ import XMonad
 import XMonad.Actions.PhysicalScreens
 import XMonad.Actions.CycleWS
 
+import XMonad.Config.Gnome
+import XMonad.Config.Desktop (desktopLayoutModifiers)
 import XMonad.Util.Run
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.DynamicLog (dynamicLogXinerama, xmobar)
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.ManageHelpers (composeOne, isFullscreen, isDialog,  doFullFloat, doCenterFloat)
 import qualified XMonad.StackSet as W
 
 import XMonad.Layout.Spacing
 import XMonad.Layout.Tabbed
 import XMonad.Layout.ZoomRow
+import XMonad.Layout.SimpleFloat
 
 main = do
-    xmonad =<< xmobar defaultConfig
+    xmonad $ gnomeConfig
         { borderWidth = 2
         , normalBorderColor = borderColor
         , focusedBorderColor = focusBorderColor
@@ -35,7 +39,7 @@ main = do
 borderColor = "#073642"
 focusBorderColor = "#657b83"
 
-myLayout = ( tiled ||| largeMaster ||| simpleTabbed ||| zoomRow ||| Mirror tiled )
+myLayout = desktopLayoutModifiers ( tiled ||| largeMaster ||| simpleTabbed ||| zoomRow ||| Mirror tiled ||| simpleFloat )
     where
         tiled = spacing 2 $ Tall numMaster standardDelta standardRatio
         largeMaster = spacing 2 $ Tall numMaster standardDelta largeRatio
@@ -44,13 +48,14 @@ myLayout = ( tiled ||| largeMaster ||| simpleTabbed ||| zoomRow ||| Mirror tiled
         largeRatio = 2/3
         standardDelta = 3/100
 
-spaces = ["1:web","2:proj1","3:proj2","4:proj3","5:misc","6:personal","7:code1","8:code2","9:code3","0:conf"]
+spaces = ["1:web","2:proj1","3:proj2","4:proj3","5:video","6:personal","7:code1","8:code2","9:code3","0:conf"]
 
 myManageHook = composeAll
-    [ -- stringProperty "WM_WINDOW_ROLE" =? "pop-up" --> doShift "3:chat"
---   , className =? "Gnome-player" --> doFloat
---   , className =? "Iron" --> doShift "8:web"
---   , className =? "Xchat" --> doShift "2:chat"
+    [ manageHook gnomeConfig
+    , className =? "Vlc" --> doShift "5:video"
+    , className =? "Vlc" --> doCenterFloat
+    , isFullscreen --> doFullFloat
+    , isDialog --> doCenterFloat
     ]
 
 sMod = mod1Mask .|. shiftMask

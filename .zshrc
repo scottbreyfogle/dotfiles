@@ -95,7 +95,7 @@ alias -g pl="2>&1 | less"
 alias zre="source ~/.zshrc"
 alias zrc="$EDITOR ~/.zshrc"
 alias vrc="$EDITOR ~/.vimrc"
-alias xrc="vim -p ~/.xmonad/xmonad.hs ~/.xmobarrc"
+alias xrc="$EDITOR ~/.xmonad/xmonad.hs"
 
 function keys {
     scp feanor:~/.ssh/id_rsa .ssh
