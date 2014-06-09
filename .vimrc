@@ -50,6 +50,8 @@ set number
 set textwidth=80
 " Always show status bar
 set laststatus=2
+" Always show tab bar
+set showtabline=2
 
 "
 " Command history settings
@@ -117,6 +119,7 @@ noremap <tab> %
 " Bastardization from too much emacs mode bash
 imap <C-a> <Home>
 imap <C-e> <End>
+nnoremap Y y$
 
 "
 " Tab settings
