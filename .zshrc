@@ -40,10 +40,6 @@ source $ZSH/oh-my-zsh.sh
 ################## My Config ###########################
 ########################################################
 
-if [[ -a ~/.google/zshrc ]]; then
-  source ~/.google/zshrc
-fi
-
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 
 # Fix special keys
@@ -114,4 +110,8 @@ HIST_IGNORE_SPACE=true # Easy way to avoid logging a command: start it with a sp
 # Everyone likes talking computers
 if ((! type say) && type mplayer) > /dev/null; then
     function say { mplayer "http://translate.google.com/translate_tts?tl=en&q=$1" > /dev/null }
+fi
+
+if [[ -a ~/.google/zshrc ]]; then
+  source ~/.google/zshrc
 fi

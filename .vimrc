@@ -10,6 +10,10 @@ else
   source ~/.personal/vimrc
 endif
 
+" Misc plugin settings
+execute pathogen#infect()
+let g:syntastic_mode_map = {'mode': 'passive'}
+
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
 " (happens when dropping a file on gvim).
@@ -114,6 +118,7 @@ nnoremap <leader>v :tabedit ~/.vimrc<cr>
 nnoremap <leader>r :source ~/.vimrc<cr>:echo 'vimrc reloaded'<cr>
 nnoremap <leader>e :tabedit 
 nnoremap <leader>ws :s/\s\+$//<cr>
+nnoremap <leader>s :SyntasticCheck<cr>
 " Tab for matching braces
 noremap <tab> %
 " Bastardization from too much emacs mode bash
