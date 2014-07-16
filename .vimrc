@@ -142,3 +142,7 @@ set shiftwidth=2
 set iskeyword-=(
 set iskeyword-=)
 set iskeyword-=.
+
+" Eclim gui options
+set guioptions-=m
+set guioptions-=T
