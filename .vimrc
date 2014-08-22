@@ -146,3 +146,12 @@ set iskeyword-=.
 " Eclim gui options
 set guioptions-=m
 set guioptions-=T
+nnoremap <leader>l :LocateFile<cr>
+nnoremap <leader>i :JavaImportOrganize<cr>
+nnoremap <leader>f :JavaCorrect<cr>
+nnoremap <cr> :JavaSearchContext<cr>
+
+let g:EclimLocateFileDefaultAction='tabnew'
+let g:EclimDefaultFileOpenAction='tabnew'
+let g:EclimJavaSearchSingleResult='tabnew'
+let g:EclimCompletionMethod = 'omnifunc'
