@@ -1,0 +1,9 @@
+alias install="sudo pacman -S"
+alias update="sudo pacman -Syu"
+alias zrc="vim -p ~/.zshrc ~/.personal/zshrc"
+alias vrc="vim -p ~/.vimrc ~/.personal/vimrc"
+
+# Everyone likes talking computers
+if ((! type say) && type mplayer) > /dev/null; then
+    function say { mplayer "http://translate.google.com/translate_tts?tl=en&q=$1" > /dev/null }
+fi

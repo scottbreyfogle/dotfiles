@@ -79,9 +79,6 @@ alias svim="sudo -e"
 alias v=vim
 compdef v=vim
 
-alias install="sudo apt-get install"
-alias update="sudo apt-get update && sudo apt-get upgrade"
-
 # Global aliases
 alias -g bry=breyfogle
 alias -g swb=scottbreyfogle
@@ -108,11 +105,8 @@ HIST_EXPIRE_DUPS_FIRST=true # Remove duplicate commands (I'm looking at you ls) 
 HIST_FIND_NO_DUPS=true # Generally don't want to find the same command multiple times
 HIST_IGNORE_SPACE=true # Easy way to avoid logging a command: start it with a space
 
-# Everyone likes talking computers
-if ((! type say) && type mplayer) > /dev/null; then
-    function say { mplayer "http://translate.google.com/translate_tts?tl=en&q=$1" > /dev/null }
-fi
-
 if [[ -a ~/.google/zshrc ]]; then
   source ~/.google/zshrc
+else
+  source ~/.personal/zshrc
 fi
