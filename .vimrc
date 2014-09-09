@@ -102,6 +102,9 @@ set list
 set background=dark
 let g:solarized_termtrans=1 " Fixes weird blocky issues with solarized vim in solarized consoles
 colorscheme solarized
+" Eclim gui options
+set guioptions-=m
+set guioptions-=T
 
 "
 " Remap commands
@@ -121,10 +124,13 @@ nnoremap <leader>ws :s/\s\+$//<cr>
 nnoremap <leader>s :SyntasticCheck<cr>
 " Tab for matching braces
 noremap <tab> %
-" Bastardization from too much emacs mode bash
-imap <C-a> <Home>
-imap <C-e> <End>
+" Capital y should work like capital d
 nnoremap Y y$
+" Eclim commands
+nnoremap <leader>l :LocateFile<cr>
+nnoremap <leader>i :JavaImportOrganize<cr>
+nnoremap <leader>f :JavaCorrect<cr>
+nnoremap <cr> :JavaSearchContext<cr>
 
 "
 " Tab settings
@@ -138,20 +144,18 @@ set softtabstop=2
 " << and >> shift 2 spaces
 set shiftwidth=2
 
+"
+" Misc Settings
+"
 " Add keywords for more accurate w and b movement
 set iskeyword-=(
 set iskeyword-=)
 set iskeyword-=.
-
-" Eclim gui options
-set guioptions-=m
-set guioptions-=T
-nnoremap <leader>l :LocateFile<cr>
-nnoremap <leader>i :JavaImportOrganize<cr>
-nnoremap <leader>f :JavaCorrect<cr>
-nnoremap <cr> :JavaSearchContext<cr>
-
+" Join comment blocks correctly
+set formatoptions+=j
+" Eclim open stuff in tabs instead of buffers
 let g:EclimLocateFileDefaultAction='tabnew'
 let g:EclimDefaultFileOpenAction='tabnew'
 let g:EclimJavaSearchSingleResult='tabnew'
+" Eclim connection to ycm
 let g:EclimCompletionMethod = 'omnifunc'
