@@ -3,11 +3,13 @@
 set nocompatible
 
 " At work, or not:
-if filereadable(expand('~/.google/vimrc'))
+if filereadable(expand('~/.google/before.vimrc'))
   " Google-only
-  source ~/.google/vimrc
+  source ~/.google/before.vimrc
 else
-  source ~/.personal/vimrc
+  if filereadable(expand('~/.personal/before.vimrc'))
+    source ~/.personal/before.vimrc
+  endif
 endif
 
 " Misc plugin settings
@@ -123,7 +125,7 @@ nnoremap <leader>p :set relativenumber!<cr>:set number!<cr>:set foldcolumn=0<cr>
 " System copy/paste
 xnoremap <leader>c :yank +<cr>
 xnoremap <leader>x :delete +<cr>
-xnoremap <leader>v :put +<cr>
+nnoremap <leader>v :put +<cr>
 " Clear search highlighting
 nnoremap <leader><space> :nohlsearch<cr>
 " Edit vimrc
@@ -165,3 +167,13 @@ let g:EclimDefaultFileOpenAction='tabnew'
 let g:EclimJavaSearchSingleResult='tabnew'
 " Eclim connection to ycm
 let g:EclimCompletionMethod = 'omnifunc'
+
+" At work, or not:
+if filereadable(expand('~/.google/after.vimrc'))
+  " Google-only
+  source ~/.google/after.vimrc
+else
+  if filereadable(expand('~/.personal/after.vimrc'))
+    source ~/.personal/after.vimrc
+  endif
+endif
