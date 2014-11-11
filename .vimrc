@@ -109,28 +109,34 @@ set guioptions-=T
 "
 " Remap commands
 "
+" Tab for matching braces
+noremap <tab> %
+" Capital y should work like capital d
+nnoremap Y y$
+nnoremap <cr> :JavaSearchContext<cr>
+
+" Leader Commands
 " Change default leader key from \ to ,
 let mapleader = ","
 " Toggle line numbering and paste mode, and open all folds
 nnoremap <leader>p :set relativenumber!<cr>:set number!<cr>:set foldcolumn=0<cr>:set paste!<cr>
+" System copy/paste
+xnoremap <leader>c :yank +<cr>
+xnoremap <leader>x :delete +<cr>
+xnoremap <leader>v :put +<cr>
 " Clear search highlighting
 nnoremap <leader><space> :nohlsearch<cr>
 " Edit vimrc
-nnoremap <leader>v :tabedit ~/.vimrc<cr>
+nnoremap <leader>rc :tabedit ~/.vimrc<cr>
 " Reload vimrc
 nnoremap <leader>r :source ~/.vimrc<cr>:echo 'vimrc reloaded'<cr>
 nnoremap <leader>e :tabedit 
 nnoremap <leader>ws :s/\s\+$//<cr>
 nnoremap <leader>s :SyntasticCheck<cr>
-" Tab for matching braces
-noremap <tab> %
-" Capital y should work like capital d
-nnoremap Y y$
 " Eclim commands
 nnoremap <leader>l :LocateFile<cr>
 nnoremap <leader>i :JavaImportOrganize<cr>
 nnoremap <leader>f :JavaCorrect<cr>
-nnoremap <cr> :JavaSearchContext<cr>
 
 "
 " Tab settings
@@ -151,8 +157,8 @@ set shiftwidth=2
 set iskeyword-=(
 set iskeyword-=)
 set iskeyword-=.
-" Join comment blocks correctly
-set formatoptions+=j
+" Join comment blocks correctly and with gq
+set formatoptions+=cjq
 " Eclim open stuff in tabs instead of buffers
 let g:EclimLocateFileDefaultAction='tabnew'
 let g:EclimDefaultFileOpenAction='tabnew'
