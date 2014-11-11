@@ -150,3 +150,4 @@ toggleMute  = "amixer -D pulse set Master toggle"
 
 startup = do
     spawn "source ~/.xinitrc"
+    spawn "/usr/bin/xcompmgr"
