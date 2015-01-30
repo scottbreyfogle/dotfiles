@@ -4,7 +4,10 @@
 !README.md
 !.config
 !.fonts
-!.git*
+!.git
+!.gitconfig
+!.gitignore
+!.gitmodule
 !.global_ignore
 !.gnome-terminal-colors-solarized
 !.oh-my-zsh
