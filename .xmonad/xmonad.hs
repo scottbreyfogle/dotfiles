@@ -6,19 +6,21 @@ import XMonad
 import XMonad.Actions.PhysicalScreens
 import XMonad.Actions.CycleWS
 
-import XMonad.Config.Gnome
 import XMonad.Config.Desktop (desktopLayoutModifiers)
-import XMonad.Util.Run
+import XMonad.Config.Gnome
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.DynamicLog (dynamicLogXinerama, xmobar)
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers (composeOne, isFullscreen, isDialog,  doFullFloat, doCenterFloat)
+import XMonad.Util.Run
 import qualified XMonad.StackSet as W
 
+import XMonad.Layout.MultiToggle
+import XMonad.Layout.Reflect
+import XMonad.Layout.SimpleFloat
 import XMonad.Layout.Spacing
 import XMonad.Layout.Tabbed
 import XMonad.Layout.ZoomRow
-import XMonad.Layout.SimpleFloat
 
 main = do
     xmonad $ gnomeConfig
@@ -39,13 +41,14 @@ main = do
 borderColor = "#073642"
 focusBorderColor = "#657b83"
 
-myLayout = desktopLayoutModifiers ( tiled ||| largeMaster ||| simpleTabbed ||| zoomRow ||| Mirror tiled ||| simpleFloat )
+myLayout = desktopLayoutModifiers $
+             mkToggle (single REFLECTY) $
+             mkToggle (single REFLECTX) $
+             ( tiled ||| simpleTabbed ||| zoomRow ||| simpleFloat )
     where
         tiled = spacing 2 $ Tall numMaster standardDelta standardRatio
-        largeMaster = spacing 2 $ Tall numMaster standardDelta largeRatio
         numMaster = 1
         standardRatio = 1/2
-        largeRatio = 2/3
         standardDelta = 3/100
 
 spaces = ["1:web","2:proj1","3:proj2","4:proj3","5:video","6:personal","7:code1","8:code2","9:code3","0:conf"]
@@ -125,6 +128,12 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = Map.fromList $
     ]
     ++
 
+    -- Mirroring
+    [ ((modm, xK_f), sendMessage $ Toggle REFLECTY)
+    , ((modm, xK_m), sendMessage $ Toggle REFLECTX)
+    ]
+    ++
+
     --
     -- mod-[1..9], Switch to workspace N
     -- mod-shift-[1..9], Move client to workspace N
@@ -151,3 +160,4 @@ setTouchpad = "xinput set-prop 'SynPS/2 Synaptics TouchPad' 'Device Enabled'"
 
 startup = do
     spawn "source ~/.xinitrc"
+    spawn "/usr/bin/xcompmgr"

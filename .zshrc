@@ -32,7 +32,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(command-not-found extract golang pip vi-mode zsh-syntax-highlighting)
+plugins=(command-not-found extract golang google pip tmux vi-mode zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -76,8 +76,7 @@ alias gh="history | grep"
 alias fn="noglob find . -name"
 alias find="noglob find"
 alias svim="sudo -e"
-alias v=vim
-compdef v=vim
+alias vim="vim -p"
 
 # Global aliases
 alias -g bry=breyfogle

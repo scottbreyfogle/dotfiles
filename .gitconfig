@@ -3,9 +3,6 @@
     excludesfile = .global_ignore
 [color]
     ui = true
-[merge]
-    tool = vimdiff
-    conflictstyle = diff3
 [user]
     email = swb02009@mymail.pomona.edu
     name = Scott Breyfogle
@@ -23,5 +20,3 @@
     d  = diff
     dh = diff HEAD
     dl = diff HEAD~1 HEAD
-[diff]
-    tool = vimdiff

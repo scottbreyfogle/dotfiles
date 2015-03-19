@@ -3,11 +3,13 @@
 set nocompatible
 
 " At work, or not:
-if filereadable(expand('~/.google/vimrc'))
+if filereadable(expand('~/.google/before.vimrc'))
   " Google-only
-  source ~/.google/vimrc
+  source ~/.google/before.vimrc
 else
-  source ~/.personal/vimrc
+  if filereadable(expand('~/.personal/before.vimrc'))
+    source ~/.personal/before.vimrc
+  endif
 endif
 
 " Misc plugin settings
@@ -102,29 +104,41 @@ set list
 set background=dark
 let g:solarized_termtrans=1 " Fixes weird blocky issues with solarized vim in solarized consoles
 colorscheme solarized
+" Eclim gui options
+set guioptions-=m
+set guioptions-=T
 
 "
 " Remap commands
 "
+" Tab for matching braces
+noremap <tab> %
+" Capital y should work like capital d
+nnoremap Y y$
+nnoremap <cr> :JavaSearchContext<cr>
+
+" Leader Commands
 " Change default leader key from \ to ,
 let mapleader = ","
 " Toggle line numbering and paste mode, and open all folds
 nnoremap <leader>p :set relativenumber!<cr>:set number!<cr>:set foldcolumn=0<cr>:set paste!<cr>
+" System copy/paste
+xnoremap <leader>c :yank +<cr>
+xnoremap <leader>x :delete +<cr>
+nnoremap <leader>v :put +<cr>
 " Clear search highlighting
 nnoremap <leader><space> :nohlsearch<cr>
 " Edit vimrc
-nnoremap <leader>v :tabedit ~/.vimrc<cr>
+nnoremap <leader>rc :tabedit ~/.vimrc<cr>
 " Reload vimrc
 nnoremap <leader>r :source ~/.vimrc<cr>:echo 'vimrc reloaded'<cr>
 nnoremap <leader>e :tabedit 
 nnoremap <leader>ws :s/\s\+$//<cr>
 nnoremap <leader>s :SyntasticCheck<cr>
-" Tab for matching braces
-noremap <tab> %
-" Bastardization from too much emacs mode bash
-imap <C-a> <Home>
-imap <C-e> <End>
-nnoremap Y y$
+" Eclim commands
+nnoremap <leader>l :LocateFile<cr>
+nnoremap <leader>i :JavaImportOrganize<cr>
+nnoremap <leader>f :JavaCorrect<cr>
 
 "
 " Tab settings
@@ -138,11 +152,28 @@ set softtabstop=2
 " << and >> shift 2 spaces
 set shiftwidth=2
 
+"
+" Misc Settings
+"
 " Add keywords for more accurate w and b movement
 set iskeyword-=(
 set iskeyword-=)
 set iskeyword-=.
+" Join comment blocks correctly and with gq
+set formatoptions+=cjq
+" Eclim open stuff in tabs instead of buffers
+let g:EclimLocateFileDefaultAction='tabnew'
+let g:EclimDefaultFileOpenAction='tabnew'
+let g:EclimJavaSearchSingleResult='tabnew'
+" Eclim connection to ycm
+let g:EclimCompletionMethod = 'omnifunc'
 
-" Eclim gui options
-set guioptions-=m
-set guioptions-=T
+" At work, or not:
+if filereadable(expand('~/.google/after.vimrc'))
+  " Google-only
+  source ~/.google/after.vimrc
+else
+  if filereadable(expand('~/.personal/after.vimrc'))
+    source ~/.personal/after.vimrc
+  endif
+endif
