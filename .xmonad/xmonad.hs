@@ -84,6 +84,12 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = Map.fromList $
     ]
     ++
 
+    -- Touchpad
+    [ ((modm, xK_p), spawn setTouchpadOn)
+    , ((sMod, xK_p), spawn setTouchpadOff)
+    ]
+    ++
+
     -- Applications
     [ ((modm, xK_c), spawn browser)
     , ((modm, xK_Return), spawn term)
@@ -147,6 +153,10 @@ browser = "google-chrome"
 lowerVolume = "amixer set Master 2-"
 raiseVolume = "amixer set Master 2+"
 toggleMute  = "amixer -D pulse set Master toggle"
+
+setTouchpadOn = setTouchpad ++ " 1"
+setTouchpadOff = setTouchpad ++ " 0"
+setTouchpad = "xinput set-prop 'SynPS/2 Synaptics TouchPad' 'Device Enabled'"
 
 startup = do
     spawn "source ~/.xinitrc"
