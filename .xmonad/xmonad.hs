@@ -31,7 +31,11 @@ main = do
         , layoutHook = myLayout
         , workspaces = spaces
         , keys = myKeys
-        , startupHook = startup
+        -- Gnome config needs to be run in addition to mine.
+        -- The config sends a message to gnome that lets it know everything is
+        -- fine. This removes side effects like delay and auto-logout when it
+        -- doesn't get the message.
+        , startupHook = startupHook gnomeConfig >> startup
         , logHook = dynamicLogWithPP $ xmobarPP
             { ppTitle = xmobarColor "green" "" . shorten 50
             , ppHiddenNoWindows = xmobarColor "grey" ""

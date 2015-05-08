@@ -58,6 +58,10 @@ set textwidth=80
 set laststatus=2
 " Always show tab bar
 set showtabline=2
+" Allow more than 10 tabs
+set tabpagemax=20
+" My typing is terrible, and it's hard to see your own typos
+set spell
 
 "
 " Command history settings
