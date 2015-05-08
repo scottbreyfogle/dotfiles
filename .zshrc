@@ -109,3 +109,7 @@ if [[ -a ~/.google/zshrc ]]; then
 else
   source ~/.personal/zshrc
 fi
+
+if [[ -a ~/.google/ssh_config ]]; then
+  alias ssh="ssh -F ~/.google/ssh_config"
+fi
