@@ -15,6 +15,7 @@ import XMonad.Hooks.ManageHelpers (composeOne, isFullscreen, isDialog,  doFullFl
 import XMonad.Util.Run
 import qualified XMonad.StackSet as W
 
+import XMonad.Hooks.EwmhDesktops
 import XMonad.Layout.MultiToggle
 import XMonad.Layout.Reflect
 import XMonad.Layout.SimpleFloat
@@ -23,7 +24,7 @@ import XMonad.Layout.Tabbed
 import XMonad.Layout.ZoomRow
 
 main = do
-    xmonad $ gnomeConfig
+    xmonad $ ewmh gnomeConfig
         { borderWidth = 2
         , normalBorderColor = borderColor
         , focusedBorderColor = focusBorderColor
@@ -40,6 +41,7 @@ main = do
             { ppTitle = xmobarColor "green" "" . shorten 50
             , ppHiddenNoWindows = xmobarColor "grey" ""
             }
+        , handleEventHook = handleEventHook gnomeConfig <+> fullscreenEventHook
         }
 
 borderColor = "#073642"
