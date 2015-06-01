@@ -142,9 +142,9 @@ nnoremap <leader>e :tabedit
 nnoremap <leader>ws :s/\s\+$//<cr>
 nnoremap <leader>s :SyntasticCheck<cr>
 " Eclim commands
-nnoremap <leader>l :LocateFile<cr>
-nnoremap <leader>i :JavaImportOrganize<cr>
-nnoremap <leader>f :JavaCorrect<cr>
+nnoremap <leader>el :LocateFile<cr>
+nnoremap <leader>ei :JavaImportOrganize<cr>
+nnoremap <leader>ef :JavaCorrect<cr>
 
 "
 " Tab settings
