@@ -111,6 +111,8 @@ colorscheme solarized
 " Eclim gui options
 set guioptions-=m
 set guioptions-=T
+" Disable ycm preview window
+let g:ycm_autoclose_preview_window_after_insertion=1
 
 "
 " Remap commands
