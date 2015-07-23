@@ -121,17 +121,17 @@ let g:airline#extensions#bufferline#enabled = 1
 noremap <tab> %
 " Capital y should work like capital d
 nnoremap Y y$
-nnoremap <cr> :JavaSearchContext<cr>
 
 " Leader Commands
 " Change default leader key from \ to ,
 let mapleader = ","
 " Toggle line numbering and paste mode, and open all folds
 nnoremap <leader>p :set relativenumber!<cr>:set number!<cr>:set foldcolumn=0<cr>:set paste!<cr>
-" System copy/paste
-xnoremap <leader>c :yank +<cr>
-xnoremap <leader>x :delete +<cr>
-nnoremap <leader>v :put +<cr>
+" System copy/paste over ssh. Requires xclip, but the simplest ssh solution I
+" could find.
+xnoremap <leader>c :!xclip -f -sel clip<cr>
+xnoremap <leader>x :!xclip -i -sel clip<cr>
+nnoremap <leader>v :r!xclip -o -sel clip<cr>
 " Clear search highlighting
 nnoremap <leader><space> :nohlsearch<cr>
 " Edit vimrc

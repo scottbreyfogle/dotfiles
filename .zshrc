@@ -82,6 +82,7 @@ alias -g bry=breyfogle
 alias -g swb=scottbreyfogle
 alias -g pg="| egrep"
 alias -g pl="2>&1 | less"
+alias -g pc="| xclip -f -sel clip"
 
 # Edit configs
 alias zre="source ~/.zshrc"
