@@ -20,3 +20,4 @@
     d  = diff
     dh = diff HEAD
     dl = diff HEAD~1 HEAD
+    cu = commit -a --amend --no-edit

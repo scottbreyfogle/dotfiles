@@ -143,6 +143,9 @@ nnoremap <leader>s :SyntasticCheck<cr>
 nnoremap <leader>el :LocateFile<cr>
 nnoremap <leader>ei :JavaImportOrganize<cr>
 nnoremap <leader>ef :JavaCorrect<cr>
+" YCM tools
+nnoremap <leader>g :YcmCompleter GoTo<cr>
+nnoremap <leader>yc :YcmForceCompileAndDiagnostics<cr>
 
 "
 " Tab settings
