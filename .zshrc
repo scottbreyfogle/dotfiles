@@ -76,7 +76,6 @@ alias gh="history | grep"
 alias fn="noglob find . -name"
 alias find="noglob find"
 alias svim="sudo -e"
-alias vim="vim -p"
 
 # Global aliases
 alias -g bry=breyfogle

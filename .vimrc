@@ -56,10 +56,6 @@ set number
 set textwidth=80
 " Always show status bar
 set laststatus=2
-" Always show tab bar
-set showtabline=2
-" Allow more than 10 tabs
-set tabpagemax=20
 " My typing is terrible, and it's hard to see your own typos
 set spell
 
@@ -113,6 +109,10 @@ set guioptions-=m
 set guioptions-=T
 " Disable ycm preview window
 let g:ycm_autoclose_preview_window_after_insertion=1
+" Populate locations for access by hotkeys
+let g:ycm_always_populate_location_list = 1
+" Enable the list of buffers
+let g:airline#extensions#bufferline#enabled = 1
 
 "
 " Remap commands
@@ -135,11 +135,9 @@ nnoremap <leader>v :put +<cr>
 " Clear search highlighting
 nnoremap <leader><space> :nohlsearch<cr>
 " Edit vimrc
-nnoremap <leader>rc :tabedit ~/.vimrc<cr>
+nnoremap <leader>rc :edit ~/.vimrc<cr>
 " Reload vimrc
 nnoremap <leader>r :source ~/.vimrc<cr>:echo 'vimrc reloaded'<cr>
-nnoremap <leader>e :tabedit 
-nnoremap <leader>ws :s/\s\+$//<cr>
 nnoremap <leader>s :SyntasticCheck<cr>
 " Eclim commands
 nnoremap <leader>el :LocateFile<cr>
@@ -167,10 +165,6 @@ set iskeyword-=)
 set iskeyword-=.
 " Join comment blocks correctly and with gq
 set formatoptions+=cjq
-" Eclim open stuff in tabs instead of buffers
-let g:EclimLocateFileDefaultAction='tabnew'
-let g:EclimDefaultFileOpenAction='tabnew'
-let g:EclimJavaSearchSingleResult='tabnew'
 " Eclim connection to ycm
 let g:EclimCompletionMethod = 'omnifunc'
 
