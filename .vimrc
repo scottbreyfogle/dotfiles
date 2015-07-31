@@ -2,6 +2,7 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+let g:pathogen_disabled = []
 " At work, or not:
 if filereadable(expand('~/.google/before.vimrc'))
   " Google-only
@@ -16,6 +17,14 @@ endif
 execute pathogen#infect()
 let g:syntastic_mode_map = {'mode': 'passive'}
 
+"
+" File/buffer settings
+"
+" Change dir to that of current file
+set autochdir
+" Switching buffers keeps other files open so you don't have to save & lose
+" history when switching
+set hidden
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
 " (happens when dropping a file on gvim).
@@ -25,8 +34,6 @@ autocmd BufReadPost *
 \ if line("'\"") > 1 && line("'\"") <= line("$") |
 \   exe "normal! g`\"" |
 \ endif
-" Change dir to that of current file
-set autochdir
 
 "
 " Cursor display settings
