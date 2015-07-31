@@ -55,3 +55,6 @@
 [submodule ".vim/bundle/argtextobj"]
 	path = .vim/bundle/argtextobj
 	url = https://github.com/vim-scripts/argtextobj.vim.git
+[submodule ".vim/bundle/file-line"]
+	path = .vim/bundle/file-line
+	url = https://github.com/lervag/file-line.git
