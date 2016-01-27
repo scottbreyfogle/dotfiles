@@ -97,19 +97,18 @@ function keys {
     ssh-add ~/.ssh/id_rsa
 }
 
-# History
-HISTSIZE=15000
-SAVEHIST=10000
+# History. See http://zsh.sourceforge.net/Guide/zshguide02.html#l18
+HISTSIZE=150000
+SAVEHIST=150000
 HIST_EXPIRE_DUPS_FIRST=true # Remove duplicate commands (I'm looking at you ls) first
 HIST_FIND_NO_DUPS=true # Generally don't want to find the same command multiple times
 HIST_IGNORE_SPACE=true # Easy way to avoid logging a command: start it with a space
+SHARE_HISTORY=true # Share history between running shells
+EXTENDED_HISTORY=true # Store history start and running time.
+HIST_REDUCE_BLANK=true # Remove spaces for better 
 
 if [[ -a ~/.google/zshrc ]]; then
   source ~/.google/zshrc
 else
   source ~/.personal/zshrc
-fi
-
-if [[ -a ~/.google/ssh_config ]]; then
-  alias ssh="ssh -F ~/.google/ssh_config"
 fi
