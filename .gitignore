@@ -1,7 +1,4 @@
 *
-!bin
-!LICENSE.txt
-!README.md
 !.config
 !.fonts
 !.git
@@ -18,6 +15,9 @@
 !.vim
 !.vimrc
 !.xmonad
-!xmonad.hs
 !.zshkeys
 !.zshrc
+!LICENSE.txt
+!README.md
+!bin
+!xmonad.hs

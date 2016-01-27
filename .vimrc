@@ -16,6 +16,9 @@ endif
 " Misc plugin settings
 execute pathogen#infect()
 let g:syntastic_mode_map = {'mode': 'passive'}
+let g:UltiSnipsExpandTrigger = "<c-j>"
+let g:UltiSnipsJumpForwardTrigger = "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 
 "
 " File/buffer settings
