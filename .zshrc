@@ -36,6 +36,15 @@ plugins=(command-not-found extract golang google pip tmux vi-mode zsh-syntax-hig
 
 source $ZSH/oh-my-zsh.sh
 
+# Fzf
+if [[ -a ~/.fzf.zsh ]]; then
+  source ~/.fzf.zsh
+  bindkey -M viins '^R' fzf-history-widget
+  bindkey -M vicmd '^R' fzf-history-widget
+  bindkey '^T' fzf-file-widget
+  bindkey '^A' fzf-cd-widget
+fi
+
 ########################################################
 ################## My Config ###########################
 ########################################################
@@ -51,8 +60,6 @@ EDITOR=vim
 bindkey -v
 
 # Reintroduce some emacs commands (for shame) (and convenience)
-bindkey -M viins '^R' history-incremental-search-backward
-bindkey -M vicmd '^R' history-incremental-search-backward
 bindkey -M viins '^A' beginning-of-line
 bindkey -M vicmd '^A' beginning-of-line
 bindkey -M viins '^E' end-of-line
@@ -74,7 +81,6 @@ alias grep=egrep
 alias pg="ps -e | egrep"
 alias gh="history | grep"
 alias fn="noglob find . -name"
-alias find="noglob find"
 alias svim="sudo -e"
 
 # Global aliases
