@@ -59,12 +59,6 @@ source ~/.zshkeys
 VISUAL=vim
 EDITOR=vim
 bindkey -v
-
-# Reintroduce some emacs commands (for shame) (and convenience)
-bindkey -M viins '^A' beginning-of-line
-bindkey -M vicmd '^A' beginning-of-line
-bindkey -M viins '^E' end-of-line
-bindkey -M vicmd '^E' end-of-line
 # Get backspace working after entering and exiting command mode
 bindkey "^?" backward-delete-char
 
@@ -112,7 +106,8 @@ HIST_FIND_NO_DUPS=true # Generally don't want to find the same command multiple 
 HIST_IGNORE_SPACE=true # Easy way to avoid logging a command: start it with a space
 SHARE_HISTORY=true # Share history between running shells
 EXTENDED_HISTORY=true # Store history start and running time.
-HIST_REDUCE_BLANK=true # Remove spaces for better 
+HIST_REDUCE_BLANK=true # Remove spaces for better deduplication
+export PATH=$PATH:$HOME/bin
 
 if [[ -a ~/.google/zshrc ]]; then
   source ~/.google/zshrc

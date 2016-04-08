@@ -144,6 +144,8 @@ xnoremap <leader>x :!xclip -i -sel clip<cr>
 nnoremap <leader>v :r!xclip -o -sel clip<cr>
 " Clear search highlighting
 nnoremap <leader><space> :nohlsearch<cr>
+" Sort block
+nnoremap <leader>sb vip:sort<cr>
 " Edit vimrc
 nnoremap <leader>rc :edit ~/.vimrc<cr>
 " Reload vimrc
