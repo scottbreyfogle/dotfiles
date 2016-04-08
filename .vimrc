@@ -156,6 +156,8 @@ nnoremap <leader>ef :JavaCorrect<cr>
 " YCM tools
 nnoremap <leader>g :YcmCompleter GoTo<cr>
 nnoremap <leader>yc :YcmForceCompileAndDiagnostics<cr>
+" FZF
+nnoremap <leader>z :FZF 
 
 "
 " Tab settings

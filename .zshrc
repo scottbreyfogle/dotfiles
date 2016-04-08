@@ -38,6 +38,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Fzf
 if [[ -a ~/.fzf.zsh ]]; then
+  export FZF_DEFAULT_OPTS="--exact"
   source ~/.fzf.zsh
   bindkey -M viins '^R' fzf-history-widget
   bindkey -M vicmd '^R' fzf-history-widget
