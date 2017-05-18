@@ -10,12 +10,12 @@ import XMonad.Config.Desktop (desktopLayoutModifiers)
 import XMonad.Config.Gnome
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.DynamicLog (dynamicLogXinerama, xmobar)
+import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers (composeOne, isFullscreen, isDialog,  doFullFloat, doCenterFloat)
 import XMonad.Util.Run
 import qualified XMonad.StackSet as W
 
-import XMonad.Hooks.EwmhDesktops
 import XMonad.Layout.MultiToggle
 import XMonad.Layout.Reflect
 import XMonad.Layout.SimpleFloat
@@ -79,7 +79,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = Map.fromList $
     , ((sMod, xK_r), spawn reload)
     , ((modm, xK_r), spawn dmenu)
     , ((modm, xK_q), spawn lock)
-    , ((sMod, xK_q), logout)
+    , ((modm, xK_s), spawn screenshot)
+    , ((sMod, xK_q), spawn logout)
     ]
     ++
 
@@ -153,8 +154,11 @@ tmux = "gnome-terminal --window-with-profile=tmux"
 dmenu =  "exe=`dmenu_run -b -nb black -nf yellow -sf yellow` && eval \"exec $exe\""
 reload = "xmonad --recompile && xmonad --restart"
 lock = "gnome-screensaver-command -l"
-logout = io (exitWith ExitSuccess)
+logout = "gnome-session-quit --logout --no-prompt"
+-- Old logout option w/o gnome
+-- logout = io (exitWith ExitSuccess)
 browser = "google-chrome"
+screenshot = "gnome-screenshot --interactive"
 
 lowerVolume = "amixer set Master 2-"
 raiseVolume = "amixer set Master 2+"
