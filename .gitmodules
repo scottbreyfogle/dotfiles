@@ -64,3 +64,6 @@
 [submodule ".zsh_custom/zsh-syntax-highlighting"]
 	path = .zsh_custom/zsh-syntax-highlighting
 	url = http://github.com/zsh-users/zsh-syntax-highlighting
+[submodule ".vim/bundle/sideways"]
+	path = .vim/bundle/sideways
+	url = https://github.com/AndrewRadev/sideways.vim
