@@ -67,3 +67,6 @@
 [submodule ".vim/bundle/sideways"]
 	path = .vim/bundle/sideways
 	url = https://github.com/AndrewRadev/sideways.vim
+[submodule ".vim/bundle/argumentative"]
+	path = .vim/bundle/argumentative
+	url = https://github.com/PeterRincker/vim-argumentative
