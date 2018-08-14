@@ -162,6 +162,7 @@ nnoremap <leader>ef :JavaCorrect<cr>
 " YCM tools
 nnoremap <leader>g :YcmCompleter GoTo<cr>
 nnoremap <leader>yc :YcmForceCompileAndDiagnostics<cr>
+nnoremap <leader>fi :YcmCompleter FixIt<cr>
 " FZF
 nnoremap <leader>z :FZF 
 
