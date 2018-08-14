@@ -1,6 +1,6 @@
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
-	url = git@github.com:scottbreyfogle/oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh
 [submodule ".solarized"]
 	path = .solarized
 	url = https://github.com/altercation/solarized
@@ -45,7 +45,7 @@
 	url = https://github.com/sigurdga/gnome-terminal-colors-solarized.git
 [submodule ".vim/bundle/vim-unimpaired"]
 	path = .vim/bundle/vim-unimpaired
-	url = git://github.com/tpope/vim-unimpaired.git
+	url = https://github.com/tpope/vim-unimpaired.git
 [submodule ".vim/bundle/minibufexpl"]
 	path = .vim/bundle/minibufexpl
 	url = https://github.com/fholgado/minibufexpl.vim.git
@@ -60,7 +60,7 @@
 	url = https://github.com/junegunn/fzf.git
 [submodule ".zsh_custom/zsh-syntax-highlighting"]
 	path = .zsh_custom/zsh-syntax-highlighting
-	url = http://github.com/zsh-users/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
 [submodule ".vim/bundle/sideways"]
 	path = .vim/bundle/sideways
 	url = https://github.com/AndrewRadev/sideways.vim
