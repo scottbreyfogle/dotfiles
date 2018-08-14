@@ -56,8 +56,8 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 source ~/.zshkeys
 
 # Vim 4 lyfe
-VISUAL=vim
-EDITOR=vim
+export VISUAL=vim
+export EDITOR=vim
 bindkey -v
 # Get backspace working after entering and exiting command mode
 bindkey "^?" backward-delete-char
@@ -101,12 +101,12 @@ function keys {
 # History. See http://zsh.sourceforge.net/Guide/zshguide02.html#l18
 HISTSIZE=150000
 SAVEHIST=150000
-HIST_EXPIRE_DUPS_FIRST=true # Remove duplicate commands (I'm looking at you ls) first
-HIST_FIND_NO_DUPS=true # Generally don't want to find the same command multiple times
-HIST_IGNORE_SPACE=true # Easy way to avoid logging a command: start it with a space
-SHARE_HISTORY=true # Share history between running shells
-EXTENDED_HISTORY=true # Store history start and running time.
-HIST_REDUCE_BLANK=true # Remove spaces for better deduplication
+setopt HIST_EXPIRE_DUPS_FIRST # Remove duplicate commands (I'm looking at you ls) first
+setopt HIST_FIND_NO_DUPS # Generally don't want to find the same command multiple times
+setopt HIST_IGNORE_SPACE # Easy way to avoid logging a command: start it with a space
+setopt SHARE_HISTORY # Share history between running shells
+setopt EXTENDED_HISTORY # Store history start and running time.
+setopt HIST_REDUCE_BLANKS # Remove spaces for better deduplication
 export PATH=$PATH:$HOME/bin
 
 if [[ -a ~/.google/zshrc ]]; then
