@@ -109,8 +109,8 @@ setopt EXTENDED_HISTORY # Store history start and running time.
 setopt HIST_REDUCE_BLANKS # Remove spaces for better deduplication
 export PATH=$PATH:$HOME/bin
 
-if [[ -a ~/.google/zshrc ]]; then
-  source ~/.google/zshrc
+if [[ -a ~/.wellio/zshrc ]]; then
+  source ~/.wellio/zshrc
 else
   source ~/.personal/zshrc
 fi

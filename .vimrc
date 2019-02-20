@@ -169,14 +169,14 @@ nnoremap <leader>z :FZF
 "
 " Tab settings
 "
-" Use Spaces instaed of tabs
+" Use Spaces instead of tabs
 set expandtab
-" Tabs displayed as 2 spaces (for go, other tabbed stuff)
-set tabstop=2
-" Tab key inserts 2 spaces
-set softtabstop=2
-" << and >> shift 2 spaces
-set shiftwidth=2
+" Tabs displayed as 4 spaces (for go, other tabbed stuff)
+set tabstop=4
+" Tab key inserts 4 spaces
+set softtabstop=4
+" << and >> shift 4 spaces
+set shiftwidth=4
 
 "
 " Misc Settings
@@ -191,9 +191,8 @@ set formatoptions+=cjq
 let g:EclimCompletionMethod = 'omnifunc'
 
 " At work, or not:
-if filereadable(expand('~/.google/after.vimrc'))
-  " Google-only
-  source ~/.google/after.vimrc
+if filereadable(expand('~/.wellio/after.vimrc'))
+  source ~/.wellio/after.vimrc
 else
   if filereadable(expand('~/.personal/after.vimrc'))
     source ~/.personal/after.vimrc
