@@ -32,7 +32,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(command-not-found extract golang google mercurial pip tmux vi-mode zsh-syntax-highlighting)
+plugins=(extract git golang pip tmux vi-mode zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -44,7 +44,25 @@ if [[ -a ~/.fzf.zsh ]]; then
   bindkey -M vicmd '^R' fzf-history-widget
   bindkey '^T' fzf-file-widget
   bindkey '^A' fzf-cd-widget
+  FZF_TMUX=$TMUX
 fi
+
+# Copied from chunk of .bashrc created by Anaconda3 2018.12 installer
+# >>> conda init >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$(CONDA_REPORT_ERRORS=false '/home/scott/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    \eval "$__conda_setup"
+else
+    if [ -f "/home/scott/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/scott/anaconda3/etc/profile.d/conda.sh"
+        CONDA_CHANGEPS1=false conda activate base
+    else
+        \export PATH="/home/scott/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda init <<<
 
 ########################################################
 ################## My Config ###########################
@@ -77,6 +95,7 @@ alias pg="ps -e | egrep"
 alias gh="history | grep"
 alias fn="noglob find . -name"
 alias svim="sudo -e"
+alias yapf="python3 $HOME/.yapf/yapf"
 
 # Global aliases
 alias -g bry=breyfogle

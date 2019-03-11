@@ -23,8 +23,6 @@ let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 "
 " File/buffer settings
 "
-" Change dir to that of current file
-set autochdir
 " Switching buffers keeps other files open so you don't have to save & lose
 " history when switching
 set hidden
@@ -37,6 +35,11 @@ autocmd BufReadPost *
 \ if line("'\"") > 1 && line("'\"") <= line("$") |
 \   exe "normal! g`\"" |
 \ endif
+" Move backup/swap/undo files to a global location (rather than local per file)
+let s:vim_files_dir=expand('~/.vim')
+let backupdir=s:vim_files_dir.'/backup//'
+let directory=s:vim_files_dir.'/backup//'
+let undodir=s:vim_files_dir.'/backup//'
 
 "
 " Cursor display settings
@@ -48,7 +51,7 @@ set ruler
 " Cursor grid
 set cursorline
 set cursorcolumn
-set colorcolumn=80
+set colorcolumn=100
 " Keep some lines above and below the cursor
 set scrolloff=2
 " Match angle brackets
@@ -62,8 +65,8 @@ set mouse=a
 " Line Numbering for current line, relative for others
 set relativenumber
 set number
-" Wrap after 80 chars
-set textwidth=80
+" Wrap after 100 chars
+set textwidth=100
 " Always show status bar
 set laststatus=2
 " My typing is terrible, and it's hard to see your own typos
