@@ -19,6 +19,7 @@ let g:syntastic_mode_map = {'mode': 'passive'}
 let g:UltiSnipsExpandTrigger = "<c-j>"
 let g:UltiSnipsJumpForwardTrigger = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
+let g:flake8_show_in_gutter = 1
 
 "
 " File/buffer settings
