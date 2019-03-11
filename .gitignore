@@ -1,4 +1,5 @@
 *
+
 !.config
 !.fonts
 !.fzf
@@ -18,6 +19,7 @@
 !.vimrc
 !.wellio
 !.xmonad
+!.yapf
 !.zsh_custom
 !.zshkeys
 !.zshrc

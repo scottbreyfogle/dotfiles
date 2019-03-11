@@ -1,6 +1,7 @@
 !*
 !.*
 .netrwhist
+backup/
 cache/
 eclim/
 ftdetect/sql.vim
