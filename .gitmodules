@@ -67,3 +67,12 @@
 [submodule ".vim/bundle/argumentative"]
 	path = .vim/bundle/argumentative
 	url = https://github.com/PeterRincker/vim-argumentative
+[submodule ".yapf"]
+	path = .yapf
+	url = git@github.com:google/yapf.git
+[submodule ".vim/bundle/vim-flake8"]
+	path = .vim/bundle/vim-flake8
+	url = git@github.com:nvie/vim-flake8.git
+[submodule ".vim/bundle/typescript-vim"]
+	path = .vim/bundle/typescript-vim
+	url = git@github.com:leafgarland/typescript-vim.git
