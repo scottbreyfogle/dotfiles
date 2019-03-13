@@ -37,9 +37,9 @@ autocmd BufReadPost *
 \ endif
 " Move backup/swap/undo files to a global location (rather than local per file)
 let s:vim_files_dir=expand('~/.vim')
-let backupdir=s:vim_files_dir.'/backup//'
-let directory=s:vim_files_dir.'/backup//'
-let undodir=s:vim_files_dir.'/backup//'
+let &backupdir=s:vim_files_dir.'/backup//'
+let &directory=s:vim_files_dir.'/backup//'
+let &undodir=s:vim_files_dir.'/backup//'
 
 "
 " Cursor display settings
