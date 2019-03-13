@@ -177,7 +177,7 @@ autocmd BufWritePre * Neoformat
 "
 " Use Spaces instead of tabs
 set expandtab
-" Tabs displayed as 4 spaces (for go, other tabbed stuff)
+" Tabs displayed as 4 spaces (for languages where the default expandtab setting is overridden)
 set tabstop=4
 " Tab key inserts 4 spaces
 set softtabstop=4
