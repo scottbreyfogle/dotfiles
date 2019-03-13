@@ -15,7 +15,6 @@ endif
 
 " Misc plugin settings
 execute pathogen#infect()
-let g:syntastic_mode_map = {'mode': 'passive'}
 let g:UltiSnipsExpandTrigger = "<c-j>"
 let g:UltiSnipsJumpForwardTrigger = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
@@ -169,6 +168,9 @@ nnoremap <leader>yc :YcmForceCompileAndDiagnostics<cr>
 nnoremap <leader>fi :YcmCompleter FixIt<cr>
 " FZF
 nnoremap <leader>z :FZF 
+" Formatting
+nnoremap <leader>f :Neoformat<cr>
+autocmd BufWritePre * Neoformat
 
 "
 " Tab settings
