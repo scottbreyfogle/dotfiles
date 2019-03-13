@@ -1,6 +1,6 @@
 [core]
     editor = vim
-    excludesfile = .global_ignore
+    excludesfile = ~/.global_ignore
 [color]
     ui = true
 [user]
