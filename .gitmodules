@@ -2,7 +2,7 @@
 	path = zsh/.oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh
 [submodule ".solarized"]
-	path = solarized/solarized
+	path = nonstow/solarized/solarized
 	url = https://github.com/altercation/solarized
 [submodule ".vim/bundle/vim-fugitive"]
 	path = vim/.vim/bundle/vim-fugitive
@@ -37,11 +37,8 @@
 [submodule ".vim/bundle/vim-repeat"]
 	path = vim/.vim/bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat
-[submodule ".konsole_solarized"]
-	path = .konsole_solarized
-	url = https://github.com/phiggins/konsole-colors-solarized.git
 [submodule ".gnome-terminal-colors-solarized"]
-	path = solarized/gnome-terminal-colors-solarized
+	path = nonstow/solarized/gnome-terminal-colors-solarized
 	url = https://github.com/sigurdga/gnome-terminal-colors-solarized.git
 [submodule ".vim/bundle/vim-unimpaired"]
 	path = vim/.vim/bundle/vim-unimpaired
@@ -56,7 +53,7 @@
 	path = vim/.vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
 [submodule ".fzf"]
-	path = .fzf
+	path = nonstow/fzf
 	url = https://github.com/junegunn/fzf.git
 [submodule ".zsh_custom/zsh-syntax-highlighting"]
 	path = zsh/.zsh_custom/zsh-syntax-highlighting
@@ -67,9 +64,6 @@
 [submodule ".vim/bundle/argumentative"]
 	path = vim/.vim/bundle/argumentative
 	url = https://github.com/PeterRincker/vim-argumentative
-[submodule ".yapf"]
-	path = .yapf
-	url = git@github.com:google/yapf.git
 [submodule ".vim/bundle/vim-flake8"]
 	path = vim/.vim/bundle/vim-flake8
 	url = git@github.com:nvie/vim-flake8.git
@@ -80,5 +74,5 @@
 	path = vim/.vim/bundle/neoformat
 	url = git@github.com:sbdchd/neoformat.git
 [submodule "stowfiles/solarized/dircolors-solarized"]
-	path = solarized/dircolors-solarized
+	path = nonstow/solarized/dircolors-solarized
 	url = git@github.com:seebi/dircolors-solarized.git
