@@ -51,6 +51,9 @@ fi
 unset __conda_setup
 # <<< conda init <<<
 
+# Solarized colors on ls.
+eval `dircolors ~/stowfiles/solarized/dircolors-solarized/dircolors.ansi-dark`
+
 ########################################################
 ################## My Config ###########################
 ########################################################
