@@ -15,8 +15,6 @@
 !.solarized
 !.ssh*
 !.tmux.conf
-!.vim
-!.vimrc
 !.wellio
 !.xmonad
 !.yapf

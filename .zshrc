@@ -94,7 +94,7 @@ alias -g pc="| xclip -f -sel clip"
 # Edit configs
 alias zre="source ~/.zshrc"
 alias zrc="$EDITOR ~/.zshrc"
-alias vrc="$EDITOR ~/.vimrc"
+alias vrc="$EDITOR ~/stowfiles/vim/.vimrc"
 alias xrc="$EDITOR ~/.xmonad/xmonad.hs"
 
 function keys {
