@@ -3,14 +3,8 @@
 set nocompatible
 
 let g:pathogen_disabled = []
-" At work, or not:
-if filereadable(expand('~/.google/before.vimrc'))
-  " Google-only
-  source ~/.google/before.vimrc
-else
-  if filereadable(expand('~/.personal/before.vimrc'))
-    source ~/.personal/before.vimrc
-  endif
+if filereadable(expand('~/.before.vimrc'))
+  source ~/.before.vimrc
 endif
 
 " Misc plugin settings
@@ -36,10 +30,9 @@ autocmd BufReadPost *
 \   exe "normal! g`\"" |
 \ endif
 " Move backup/swap/undo files to a global location (rather than local per file)
-let s:vim_files_dir=expand('~/.vim')
-let &backupdir=s:vim_files_dir.'/backup//'
-let &directory=s:vim_files_dir.'/backup//'
-let &undodir=s:vim_files_dir.'/backup//'
+let &backupdir=expand('~/.vim_files//')
+let &directory=expand('~/.vim_files//')
+let &undodir=expand('~/.vim_files//')
 
 "
 " Cursor display settings
@@ -197,10 +190,6 @@ set formatoptions+=cjq
 let g:EclimCompletionMethod = 'omnifunc'
 
 " At work, or not:
-if filereadable(expand('~/.wellio/after.vimrc'))
-  source ~/.wellio/after.vimrc
-else
-  if filereadable(expand('~/.personal/after.vimrc'))
-    source ~/.personal/after.vimrc
-  endif
+if filereadable(expand('~/.after.vimrc'))
+  source ~/.after.vimrc
 endif
