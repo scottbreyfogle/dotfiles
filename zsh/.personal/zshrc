@@ -1,4 +1,0 @@
-alias install="sudo pacman -S"
-alias update="sudo pacman -Syu"
-alias zrc="$EDITOR ~/.zshrc ~/.personal/zshrc"
-alias vrc="$EDITOR ~/stowfiles/vim/.vimrc ~/stowfiles/vim/.personal/after.vimrc"

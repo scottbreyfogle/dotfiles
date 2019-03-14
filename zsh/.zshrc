@@ -1,3 +1,7 @@
+if [[ -a ~/.before.zshrc ]]; then
+  source ~/.before.zshrc
+fi
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -97,7 +101,7 @@ alias -g pc="| xclip -f -sel clip"
 # Edit configs
 alias zre="source ~/.zshrc"
 alias zrc="$EDITOR ~/.zshrc"
-alias vrc="$EDITOR ~/stowfiles/vim/.vimrc"
+alias vrc="$EDITOR ~/.vimrc"
 alias xrc="$EDITOR ~/.xmonad/xmonad.hs"
 
 function keys {
@@ -118,8 +122,6 @@ setopt EXTENDED_HISTORY # Store history start and running time.
 setopt HIST_REDUCE_BLANKS # Remove spaces for better deduplication
 export PATH=$PATH:$HOME/bin
 
-if [[ -a ~/.wellio/zshrc ]]; then
-  source ~/.wellio/zshrc
-else
-  source ~/.personal/zshrc
+if [[ -a ~/.after.zshrc ]]; then
+  source ~/.after.zshrc
 fi
