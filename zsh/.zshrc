@@ -101,9 +101,8 @@ alias -g pc="| xclip -f -sel clip"
 
 # Edit configs
 alias zre="source ~/.zshrc"
-alias zrc="$EDITOR ~/.zshrc"
-alias vrc="$EDITOR ~/.vimrc"
-alias xrc="$EDITOR ~/.xmonad/xmonad.hs"
+alias zrc="$EDITOR ~/.zshrc ~/.before.zshrc ~/.after.zshrc"
+alias vrc="$EDITOR ~/.vimrc ~/.before.vimrc ~/.after.vimrc"
 
 function keys {
     scp feanor:~/.ssh/id_rsa .ssh
