@@ -55,9 +55,6 @@
 [submodule ".zsh_custom/zsh-syntax-highlighting"]
 	path = zsh/.zsh_custom/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
-[submodule ".vim/bundle/sideways"]
-	path = vim/.vim/bundle/sideways
-	url = https://github.com/AndrewRadev/sideways.vim
 [submodule ".vim/bundle/argumentative"]
 	path = vim/.vim/bundle/argumentative
 	url = https://github.com/PeterRincker/vim-argumentative
@@ -88,3 +85,6 @@
 [submodule "vim/.vim/bundle/vim-rhubarb"]
 	path = vim/.vim/bundle/vim-rhubarb
 	url = git@github.com:tpope/vim-rhubarb.git
+[submodule "vim/.vim/bundle/vim-signify"]
+	path = vim/.vim/bundle/vim-signify
+	url = git@github.com:mhinz/vim-signify.git
