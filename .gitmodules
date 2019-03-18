@@ -85,6 +85,3 @@
 [submodule "vim/.vim/bundle/vim-rhubarb"]
 	path = vim/.vim/bundle/vim-rhubarb
 	url = git@github.com:tpope/vim-rhubarb.git
-[submodule "vim/.vim/bundle/vim-signify"]
-	path = vim/.vim/bundle/vim-signify
-	url = git@github.com:mhinz/vim-signify.git
