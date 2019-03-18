@@ -116,6 +116,8 @@ let g:ycm_autoclose_preview_window_after_insertion=1
 let g:ycm_always_populate_location_list = 1
 " Enable the list of buffers
 let g:airline#extensions#bufferline#enabled = 1
+" Open quickfix after grep or git grep
+autocmd QuickFixCmdPost *grep* cwindow
 
 "
 " Remap commands
@@ -161,8 +163,8 @@ nnoremap <leader>gb :Gblame<cr>
 nnoremap <leader>gh :Gbrowse<cr>
 nnoremap <leader>gl :Glog<cr>
 nnoremap <leader>gg :Ggrep 
-" Open quickfix after grep
-autocmd QuickFixCmdPost *grep* cwindow
+" NERDTree
+nnoremap <leader>n :NERDTree<cr>
 
 "
 " Tab settings
