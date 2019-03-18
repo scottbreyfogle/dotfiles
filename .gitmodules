@@ -82,3 +82,9 @@
 [submodule "vim/.vim/bundle/ale"]
 	path = vim/.vim/bundle/ale
 	url = git@github.com:w0rp/ale.git
+[submodule "vim/.vim/bundle/fzf.vim"]
+	path = vim/.vim/bundle/fzf.vim
+	url = git@github.com:junegunn/fzf.vim.git
+[submodule "vim/.vim/bundle/vim-rhubarb"]
+	path = vim/.vim/bundle/vim-rhubarb
+	url = git@github.com:tpope/vim-rhubarb.git

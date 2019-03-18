@@ -148,7 +148,7 @@ nnoremap <leader>rc :edit ~/.vimrc<cr>
 " Reload vimrc
 nnoremap <leader>r :source ~/.vimrc<cr>:echo 'vimrc reloaded'<cr>
 " YCM tools
-nnoremap <leader>g :YcmCompleter GoTo<cr>
+nnoremap <leader>gt :YcmCompleter GoTo<cr>
 nnoremap <leader>yc :YcmForceCompileAndDiagnostics<cr>
 nnoremap <leader>fi :YcmCompleter FixIt<cr>
 " FZF
@@ -156,6 +156,13 @@ nnoremap <leader>z :FZF<cr>
 " Formatting
 nnoremap <leader>f :Neoformat<cr>
 autocmd BufWritePre * Neoformat
+" Git
+nnoremap <leader>gb :Gblame<cr>
+nnoremap <leader>gh :Gbrowse<cr>
+nnoremap <leader>gl :Glog<cr>
+nnoremap <leader>gg :Ggrep 
+" Open quickfix after grep
+autocmd QuickFixCmdPost *grep* cwindow
 
 "
 " Tab settings
