@@ -110,9 +110,6 @@ set list
 set background=dark
 let g:solarized_termtrans=1 " Fixes weird blocky issues with solarized vim in solarized consoles
 colorscheme solarized
-" Eclim gui options
-set guioptions-=m
-set guioptions-=T
 " Disable ycm preview window
 let g:ycm_autoclose_preview_window_after_insertion=1
 " Populate locations for access by hotkeys
@@ -181,8 +178,6 @@ set iskeyword-=)
 set iskeyword-=.
 " Join comment blocks correctly and with gq
 set formatoptions+=cjq
-" Eclim connection to ycm
-let g:EclimCompletionMethod = 'omnifunc'
 
 " At work, or not:
 if filereadable(expand('~/.after.vimrc'))
