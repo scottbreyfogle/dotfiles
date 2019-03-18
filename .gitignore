@@ -1,9 +1,1 @@
-!.fzf
-!.git
-!.gitconfig
-!.gitignore
-!.gitmodule
-!.global_ignore
-!.tmux.conf
-!.wellio
-!.yapf
+!.*
