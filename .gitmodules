@@ -76,3 +76,6 @@
 [submodule "stowfiles/solarized/dircolors-solarized"]
 	path = nonstow/solarized/dircolors-solarized
 	url = git@github.com:seebi/dircolors-solarized.git
+[submodule "spacemacs/.emacs.d"]
+	path = spacemacs/.emacs.d
+	url = git@github.com:syl20bnr/spacemacs.git
