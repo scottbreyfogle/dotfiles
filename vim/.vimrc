@@ -152,7 +152,7 @@ nnoremap <leader>g :YcmCompleter GoTo<cr>
 nnoremap <leader>yc :YcmForceCompileAndDiagnostics<cr>
 nnoremap <leader>fi :YcmCompleter FixIt<cr>
 " FZF
-nnoremap <leader>z :FZF 
+nnoremap <leader>z :FZF<cr>
 " Formatting
 nnoremap <leader>f :Neoformat<cr>
 autocmd BufWritePre * Neoformat
