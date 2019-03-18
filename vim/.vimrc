@@ -150,11 +150,6 @@ nnoremap <leader>sb vip:sort<cr>
 nnoremap <leader>rc :edit ~/.vimrc<cr>
 " Reload vimrc
 nnoremap <leader>r :source ~/.vimrc<cr>:echo 'vimrc reloaded'<cr>
-nnoremap <leader>s :SyntasticCheck<cr>
-" Eclim commands
-nnoremap <leader>el :LocateFile<cr>
-nnoremap <leader>ei :JavaImportOrganize<cr>
-nnoremap <leader>ef :JavaCorrect<cr>
 " YCM tools
 nnoremap <leader>g :YcmCompleter GoTo<cr>
 nnoremap <leader>yc :YcmForceCompileAndDiagnostics<cr>
