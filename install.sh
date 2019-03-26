@@ -16,7 +16,7 @@ sudo apt install build-essential cmake python3-dev
 cd ~/dotfiles/vim/.vim/bundle/ycm
 ./install.py --clang-completer --ts-completer
 # Symlink configs in main home directory
-stow -v 2 git ssh tmux vim zsh
+stow -v 2 git readline ssh tmux vim zsh
 # Install fzf (fuzzy history search)
 nonstow/fzf/install --all
 # Install solarized color scheme in gnome terminal
