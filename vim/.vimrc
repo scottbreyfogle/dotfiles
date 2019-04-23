@@ -44,7 +44,7 @@ set ruler
 " Cursor grid
 set cursorline
 set cursorcolumn
-set colorcolumn=100
+set colorcolumn=99
 " Keep some lines above and below the cursor
 set scrolloff=2
 " Match angle brackets
@@ -58,8 +58,8 @@ set mouse=a
 " Line Numbering for current line, relative for others
 set relativenumber
 set number
-" Wrap after 100 chars
-set textwidth=100
+" Wrap before 100 chars
+set textwidth=99
 " Always show status bar
 set laststatus=2
 " My typing is terrible, and it's hard to see your own typos
