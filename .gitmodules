@@ -53,7 +53,7 @@
 	path = nonstow/fzf
 	url = https://github.com/junegunn/fzf.git
 [submodule ".zsh_custom/zsh-syntax-highlighting"]
-	path = zsh/.zsh_custom/zsh-syntax-highlighting
+	path = zsh/.zsh_custom/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
 [submodule ".vim/bundle/argumentative"]
 	path = vim/.vim/bundle/argumentative
