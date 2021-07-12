@@ -133,12 +133,7 @@ let mapleader = ","
 " Toggle line numbering and paste mode, and open all folds
 nnoremap <leader>p :set relativenumber!<cr>:set number!<cr>:set foldcolumn=0<cr>:set paste!<cr>
 " System copy/paste over ssh. See https://sunaku.github.io/tmux-yank-osc52.html.
-if has('gui_running') || has('nvim') && exists('$DISPLAY')
-  xnoremap <leader>c :!xclip -f -sel clip<cr>
-else
-  " copy to attached terminal using a custom ~/bin/yank script:
-  xnoremap <Leader>c y:call system('yank > /dev/tty', @0)<cr>
-endif
+xnoremap <leader>c :!xclip -f -sel clip<cr>
 xnoremap <leader>x :!xclip -i -sel clip<cr>
 nnoremap <leader>v :r!xclip -o -sel clip<cr>
 " Clear search highlighting
@@ -157,7 +152,8 @@ nnoremap <leader>fi :YcmCompleter FixIt<cr>
 nnoremap <leader>z :FZF<cr>
 " Formatting
 nnoremap <leader>f :Neoformat<cr>
-autocmd BufWritePre * Neoformat
+autocmd BufWritePre *.go Neoformat
+autocmd BufWritePre *.py Neoformat
 " Git
 nnoremap <leader>gb :Gblame<cr>
 nnoremap <leader>gh :Gbrowse<cr>
