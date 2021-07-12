@@ -24,10 +24,11 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(extract git golang pip tmux vi-mode zsh-syntax-highlighting)
+plugins=(command-not-found docker-compose docker extract gcloud git golang kubectl pip tmux vault vi-mode zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
+# TODO: replace with fzf?
 # Fzf
 if [[ -a ~/.fzf.zsh ]]; then
   export FZF_DEFAULT_OPTS="--exact"
@@ -91,6 +92,8 @@ alias gh="history | grep"
 alias fn="noglob find . -name"
 alias svim="sudo -e"
 alias yapf="python3 $HOME/.yapf/yapf"
+# Old habits die hard
+alias blaze=bazel
 
 # Global aliases
 alias -g bry=breyfogle
