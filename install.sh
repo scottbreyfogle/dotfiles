@@ -6,7 +6,7 @@ mkdir -p ~/.vim_files
 # Install tools that are being configured
 sudo apt install git vim zsh tmux stow
 
-# git and stow need to run from this directory
+# git needs to run from this directory
 cd ~/dotfiles
 # Init all submodules
 # TODO: Maybe don't update all of them and just init instead?
@@ -15,6 +15,9 @@ git submodule update --recursive --remote --init
 sudo apt install build-essential cmake python3-dev
 cd ~/dotfiles/vim/.vim/bundle/ycm
 ./install.py --clang-completer --ts-completer
+
+# stow needs to run from this directory
+cd ~/dotfiles
 # Symlink configs in main home directory
 stow -v 2 git readline ssh tmux vim zsh
 # Install fzf (fuzzy history search)
