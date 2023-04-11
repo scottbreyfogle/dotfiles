@@ -4,7 +4,7 @@ set -o errexit
 # Create a directory where vim backup files can be stored.
 mkdir -p ~/.vim_files
 # Install tools that are being configured
-sudo apt install git vim zsh tmux
+sudo apt install git vim zsh tmux stow
 
 # git and stow need to run from this directory
 cd ~/dotfiles
