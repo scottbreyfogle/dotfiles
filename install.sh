@@ -12,7 +12,7 @@ cd ~/dotfiles
 # TODO: Maybe don't update all of them and just init instead?
 git submodule update --recursive --remote --init
 # Compile ycm
-sudo apt install build-essential cmake python3-dev
+sudo apt install build-essential cmake python3-dev npm
 cd ~/dotfiles/vim/.vim/bundle/ycm
 ./install.py --clang-completer --ts-completer
 
