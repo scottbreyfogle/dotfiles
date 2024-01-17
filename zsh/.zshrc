@@ -28,7 +28,6 @@ plugins=(command-not-found docker-compose docker extract gcloud git golang kubec
 
 source $ZSH/oh-my-zsh.sh
 
-# TODO: replace with fzf?
 # Fzf
 if [[ -a ~/.fzf.zsh ]]; then
   export FZF_DEFAULT_OPTS="--exact"
@@ -40,25 +39,10 @@ if [[ -a ~/.fzf.zsh ]]; then
   FZF_TMUX=$TMUX
 fi
 
-# Copied from chunk of .bashrc created by Anaconda3 2018.12 installer
-# >>> conda init >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$(CONDA_REPORT_ERRORS=false '/home/scott/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    \eval "$__conda_setup"
-else
-    if [ -f "/home/scott/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/scott/anaconda3/etc/profile.d/conda.sh"
-        CONDA_CHANGEPS1=false conda activate base
-    else
-        \export PATH="/home/scott/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda init <<<
-
 # Solarized colors on ls.
-eval `dircolors ~/dotfiles/nonstow/solarized/dircolors-solarized/dircolors.ansi-dark`
+if command -v dircolors > /dev/null; then
+    eval `dircolors ~/dotfiles/nonstow/solarized/dircolors-solarized/dircolors.ansi-dark`
+fi
 
 ########################################################
 ################## My Config ###########################
@@ -88,12 +72,10 @@ alias ll="ls -l"
 alias la="ls -la"
 alias grep=egrep
 alias pg="ps -e | egrep"
-alias gh="history | grep"
+alias ghi="history | grep"
 alias fn="noglob find . -name"
 alias svim="sudo -e"
 alias yapf="python3 $HOME/.yapf/yapf"
-# Old habits die hard
-alias blaze=bazel
 
 # Global aliases
 alias -g bry=breyfogle
@@ -107,12 +89,8 @@ alias zre="source ~/.zshrc"
 alias zrc="$EDITOR ~/.zshrc ~/.before.zshrc ~/.after.zshrc"
 alias vrc="$EDITOR ~/.vimrc ~/.before.vimrc ~/.after.vimrc"
 
-function keys {
-    scp feanor:~/.ssh/id_rsa .ssh
-    scp feanor:~/.ssh/id_rsa.pub .ssh
-    scp feanor:~/.ssh/authorized_keys .ssh
-    ssh-add ~/.ssh/id_rsa
-}
+eval $(ssh-agent)
+ssh-add ~/.ssh/id_ed25519
 
 # History. See http://zsh.sourceforge.net/Guide/zshguide02.html#l18
 HISTSIZE=150000
