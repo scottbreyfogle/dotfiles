@@ -9,7 +9,7 @@
 [push]
     default = matching
 [alias]
-    po = push origin
+    po = push origin HEAD
     ls = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
     ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
     bl = for-each-ref --sort=-committerdate refs/heads/ --format="%(committerdate)%09%(refname:short)%09%(authorname)"
@@ -21,3 +21,8 @@
     dh = diff HEAD
     dl = diff HEAD~1 HEAD
     cu = commit -a --amend --no-edit
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
