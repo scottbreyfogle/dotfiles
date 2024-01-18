@@ -161,6 +161,9 @@ nnoremap <leader>gl :Glog<cr>
 nnoremap <leader>gg :Ggrep 
 " NERDTree
 nnoremap <leader>n :NERDTree<cr>
+" Copilot
+nnoremap <leader>pd :Copilot disable<cr>
+nnoremap <leader>pe :Copilot enable<cr>
 
 "
 " Tab settings

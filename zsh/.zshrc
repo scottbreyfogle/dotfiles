@@ -62,8 +62,9 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 source ~/.zshkeys
 
 # Vim 4 lyfe
-export VISUAL=vim
-export EDITOR=vim
+export VISUAL=nvim
+export EDITOR=nvim
+alias vim=nvim
 bindkey -v
 # Get backspace working after entering and exiting command mode
 bindkey "^?" backward-delete-char
