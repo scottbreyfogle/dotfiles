@@ -23,6 +23,8 @@ cd ~/dotfiles
 stow -v 2 git readline ssh tmux vim zsh
 # ~/.config/nvim -> ~/dotfiles/nvim/.config/nvim
 stow -v 2 -t ~/.config -d nvim .config
+# ~/.local/share/nvim -> ~/dotfiles/nvim/.local/share/nvim
+stow -v 2 -t ~/.local/share -d nvim/.local share
 # Install fzf (fuzzy history search)
 nonstow/fzf/install --all
 # Install solarized color scheme in gnome terminal
