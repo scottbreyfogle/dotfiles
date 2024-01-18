@@ -21,8 +21,8 @@ cd ~/dotfiles
 # Symlink configs in main home directory
 # E.G. ~/.gitconfig -> ~/dotfiles/git/.gitconfig
 stow -v 2 git readline ssh tmux vim zsh
-# ~/.config/nvim -> ~/dotfiles/nvim/nvim
-stow -v 2 nvim -t ~/.config
+# ~/.config/nvim -> ~/dotfiles/nvim/.config/nvim
+stow -v 2 -t ~/.config -d nvim .config
 # Install fzf (fuzzy history search)
 nonstow/fzf/install --all
 # Install solarized color scheme in gnome terminal
