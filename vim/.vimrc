@@ -12,7 +12,8 @@ execute pathogen#infect()
 let g:UltiSnipsExpandTrigger = "<c-j>"
 let g:UltiSnipsJumpForwardTrigger = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
-let g:flake8_show_in_gutter = 1
+let g:ale_echo_msg_format = '[%linter%] %s'
+let g:neoformat_only_msg_on_error = 1
 
 "
 " File/buffer settings
@@ -114,16 +115,12 @@ colorscheme solarized
 let g:ycm_autoclose_preview_window_after_insertion=1
 " Populate locations for access by hotkeys
 let g:ycm_always_populate_location_list = 1
-" Enable the list of buffers
-let g:airline#extensions#bufferline#enabled = 1
 " Open quickfix after grep or git grep
 autocmd QuickFixCmdPost *grep* cwindow
 
 "
 " Remap commands
 "
-" Tab for matching braces
-noremap <tab> %
 " Capital y should work like capital d
 nnoremap Y y$
 
@@ -133,8 +130,8 @@ let mapleader = ","
 " Toggle line numbering and paste mode, and open all folds
 nnoremap <leader>p :set relativenumber!<cr>:set number!<cr>:set foldcolumn=0<cr>:set paste!<cr>
 " System copy/paste over ssh. See https://sunaku.github.io/tmux-yank-osc52.html.
-xnoremap <leader>c :!xclip -f -sel clip<cr>
-xnoremap <leader>x :!xclip -i -sel clip<cr>
+vnoremap <leader>c :!xclip -f -sel clip<cr>
+vnoremap <leader>x :!xclip -i -sel clip<cr>
 nnoremap <leader>v :r!xclip -o -sel clip<cr>
 " Clear search highlighting
 nnoremap <leader><space> :nohlsearch<cr>
@@ -155,10 +152,14 @@ nnoremap <leader>f :Neoformat<cr>
 autocmd BufWritePre *.go Neoformat
 autocmd BufWritePre *.py Neoformat
 " Git
-nnoremap <leader>gb :Gblame<cr>
-nnoremap <leader>gh :Gbrowse<cr>
-nnoremap <leader>gl :Glog<cr>
+nnoremap <leader>gd :Gdiffsplit<cr>
+nnoremap <leader>gh :GBrowse<cr>
 nnoremap <leader>gg :Ggrep 
+" These commands have an optional range, so are remapped in visual and normal mode
+nnoremap <leader>gb :G blame<cr>
+vnoremap <leader>gb :G blame<cr>
+nnoremap <leader>gl :GlLog!<cr>
+vnoremap <leader>gl :GlLog!<cr>
 " NERDTree
 nnoremap <leader>n :NERDTree<cr>
 " Copilot
