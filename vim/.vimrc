@@ -108,6 +108,7 @@ nnoremap <leader>gt :YcmCompleter GoTo<cr>
 nnoremap <leader>yc :YcmForceCompileAndDiagnostics<cr>
 nnoremap <leader>fi :YcmCompleter FixIt<cr>
 " FZF
+" TODO: Add something for fzf searching buffers
 nnoremap <leader>z :FZF<cr>
 " Formatting
 nnoremap <leader>f :Neoformat<cr>
@@ -115,8 +116,9 @@ autocmd BufWritePre *.go Neoformat
 autocmd BufWritePre *.py Neoformat
 " Git
 nnoremap <leader>gd :Gdiffsplit<cr>
-nnoremap <leader>gh :GBrowse<cr>
-nnoremap <leader>gg :Ggrep 
+nnoremap <leader>gh :GBrowse master%<cr>
+" TODO: Find a way to create a visual mapping that searches for the visual selection
+nnoremap <leader>gg :Glgrep! <c-r><c-w><cr>
 " These commands have an optional range, so are remapped in visual and normal mode
 nnoremap <leader>gb :G blame<cr>
 vnoremap <leader>gb :G blame<cr>
