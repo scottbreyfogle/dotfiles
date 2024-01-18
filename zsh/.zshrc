@@ -112,3 +112,8 @@ export PATH=$PATH:$HOME/bin:$HOME/vim_bin
 if [[ -a ~/.after.zshrc ]]; then
   source ~/.after.zshrc
 fi
+# .local.zshrc is for local machine specific settings that won't be added to git. Conda init
+# clauses are a good example.
+if [[ -a ~/.local.zshrc ]]; then
+  source ~/.local.zshrc
+fi
