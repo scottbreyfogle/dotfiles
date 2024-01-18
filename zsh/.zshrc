@@ -39,10 +39,18 @@ if [[ -a ~/.fzf.zsh ]]; then
   FZF_TMUX=$TMUX
 fi
 
-# Solarized colors on ls.
+# Solarized colors on ls. Run if dircolors is installed
 if command -v dircolors > /dev/null; then
     eval `dircolors ~/dotfiles/nonstow/solarized/dircolors-solarized/dircolors.ansi-dark`
 fi
+
+# Start ssh-agent, once.
+if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+  eval `ssh-agent -s`
+  ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+fi
+export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+ssh-add -q
 
 ########################################################
 ################## My Config ###########################
@@ -88,9 +96,6 @@ alias -g pc="| xclip -f -sel clip"
 alias zre="source ~/.zshrc"
 alias zrc="$EDITOR ~/.zshrc ~/.before.zshrc ~/.after.zshrc"
 alias vrc="$EDITOR ~/.vimrc ~/.before.vimrc ~/.after.vimrc"
-
-eval $(ssh-agent)
-ssh-add ~/.ssh/id_ed25519
 
 # History. See http://zsh.sourceforge.net/Guide/zshguide02.html#l18
 HISTSIZE=150000
