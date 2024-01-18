@@ -1,7 +1,3 @@
-" Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
-
 let g:pathogen_disabled = []
 if filereadable(expand('~/.before.vimrc'))
   source ~/.before.vimrc
@@ -9,18 +5,12 @@ endif
 
 " Misc plugin settings
 execute pathogen#infect()
-let g:UltiSnipsExpandTrigger = "<c-j>"
-let g:UltiSnipsJumpForwardTrigger = "<c-j>"
-let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 let g:ale_echo_msg_format = '[%linter%] %s'
 let g:neoformat_only_msg_on_error = 1
 
 "
 " File/buffer settings
 "
-" Switching buffers keeps other files open so you don't have to save & lose
-" history when switching
-set hidden
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
 " (happens when dropping a file on gvim).
@@ -30,18 +20,10 @@ autocmd BufReadPost *
 \ if line("'\"") > 1 && line("'\"") <= line("$") |
 \   exe "normal! g`\"" |
 \ endif
-" Move backup/swap/undo files to a global location (rather than local per file)
-let &backupdir=expand('~/.vim_files//')
-let &directory=expand('~/.vim_files//')
-let &undodir=expand('~/.vim_files//')
 
 "
 " Cursor display settings
 "
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
-" Show the cursor position all the time
-set ruler
 " Cursor grid
 set cursorline
 set cursorcolumn
@@ -54,25 +36,17 @@ set matchpairs+=<:>
 "
 " Misc display settings
 "
-" Enable mouse
-set mouse=a
 " Line Numbering for current line, relative for others
 set relativenumber
 set number
 " Wrap before 100 chars
 set textwidth=99
-" Always show status bar
-set laststatus=2
 " My typing is terrible, and it's hard to see your own typos
 set spell
 
 "
 " Command history settings
 "
-" Keep 50 lines of command line history
-set history=50
-" Display incomplete commands
-set showcmd
 " Show zsh style autocomplete for : commands
 set wildmenu
 set wildmode=list:longest
@@ -80,10 +54,6 @@ set wildmode=list:longest
 "
 " Search Options
 "
-" Do incremental searching
-set incsearch
-" Highlight search terms
-set hlsearch
 " Intelligent case sensitivity (all lowercase is insensitive, any
 " capitalization make search case sensitive)
 set ignorecase
@@ -96,11 +66,9 @@ set gdefault
 "
 " More colors
 let t_Co=256
-" Syntax highlighting
-syntax on
 " Autoindentation from files in ~/.vim/indent
 filetype plugin indent on
-" Folding
+" Fold toggling with spacebar
 set foldlevelstart=20
 nnoremap <space> za
 vnoremap <space> zf
@@ -117,12 +85,6 @@ let g:ycm_autoclose_preview_window_after_insertion=1
 let g:ycm_always_populate_location_list = 1
 " Open quickfix after grep or git grep
 autocmd QuickFixCmdPost *grep* cwindow
-
-"
-" Remap commands
-"
-" Capital y should work like capital d
-nnoremap Y y$
 
 " Leader Commands
 " Change default leader key from \ to ,
