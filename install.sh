@@ -4,17 +4,15 @@ set -o errexit
 # Create a directory where vim backup files can be stored.
 mkdir -p ~/.vim_files
 # Install tools that are being configured
-sudo apt install git vim zsh tmux stow
+sudo apt install git nvim zsh tmux stow
 
 # git needs to run from this directory
 cd ~/dotfiles
 # Init all submodules
 # TODO: Maybe don't update all of them and just init instead?
 git submodule update --recursive --remote --init
-# Compile ycm
-sudo apt install build-essential cmake python3-dev npm
-cd ~/dotfiles/vim/.vim/bundle/ycm
-./install.py --clang-completer --ts-completer
+sudo apt install build-essential python3-dev npm clangd-12 ripgrep
+npm install -g typescript typescript-language-server
 
 # stow needs to run from this directory
 cd ~/dotfiles
