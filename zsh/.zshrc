@@ -96,7 +96,7 @@ alias -g pc="| xclip -f -sel clip"
 # Edit configs
 alias zre="source ~/.zshrc"
 alias zrc="$EDITOR ~/.zshrc ~/.before.zshrc ~/.after.zshrc"
-alias vrc="$EDITOR ~/.vimrc ~/.before.vimrc ~/.after.vimrc"
+alias vrc="$EDITOR ~/.config/nvim/init.vim ~/.config/nvim/lua/swb/**/*.lua"
 
 # History. See http://zsh.sourceforge.net/Guide/zshguide02.html#l18
 HISTSIZE=150000
