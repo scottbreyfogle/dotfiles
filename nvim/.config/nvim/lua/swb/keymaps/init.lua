@@ -7,17 +7,19 @@ vim.keymap.set('n', '<leader>v', ':r!xclip -o -sel clip<cr>')
 -- Normal system copy/paste.
 vim.keymap.set('v', '<leader>c', '"+y')
 vim.keymap.set('v', '<leader>x', '"+x')
-vim.keymap.set('v', '<leader>v', '"+p')
+vim.keymap.set('n', '<leader>v', '"+p')
+
+-- Fold toggling with spacebar
+vim.o.foldlevelstart = 20
+vim.keymap.set('n', '<space>', 'za', { noremap = true })
+vim.keymap.set('v', '<space>', 'za', { noremap = true })
 
 -- Clear search highlighting
 vim.keymap.set('n', '<leader><space>', vim.cmd.nohlsearch)
 -- nnoremap <leader><space> :nohlsearch<cr>
 -- ' Sort block
 -- nnoremap <leader>sb vip:sort<cr>
--- ' Edit vimrc
--- nnoremap <leader>rc :edit ~/.vimrc<cr>
--- ' Reload vimrc
--- nnoremap <leader>r :source ~/.vimrc<cr>:echo 'vimrc reloaded'<cr>
+
 -- ' YCM tools
 -- nnoremap <leader>gt :YcmCompleter GoTo<cr>
 -- nnoremap <leader>yc :YcmForceCompileAndDiagnostics<cr>
@@ -25,10 +27,12 @@ vim.keymap.set('n', '<leader><space>', vim.cmd.nohlsearch)
 -- ' FZF
 -- ' TODO: Add something for fzf searching buffers
 -- nnoremap <leader>z :FZF<cr>
--- ' Formatting
--- nnoremap <leader>f :Neoformat<cr>
+
+-- Formatting
+vim.keymap.set('n', '<leader>f', vim.cmd.Format)
 -- autocmd BufWritePre *.go Neoformat
 -- autocmd BufWritePre *.py Neoformat
+
 -- ' Git
 -- nnoremap <leader>gd :Gdiffsplit<cr>
 -- nnoremap <leader>gh :GBrowse master%<cr>

@@ -7,5 +7,6 @@ require("lazy").setup("swb/plugins",
       root = vim.fn.stdpath 'data' .. '/lazy_packages'
     }
 )
-require("swb/keymap")
+require("swb/keymaps")
 require("swb/settings")
+require("swb/autoformat")

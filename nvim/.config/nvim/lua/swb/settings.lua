@@ -18,8 +18,6 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 -- " Wrap before 100 chars
 vim.opt.textwidth = 99
--- " My typing is terrible, and it's hard to see your own typos
-vim.opt.spell = true
 
 --
 -- Command history settings
