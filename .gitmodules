@@ -4,72 +4,30 @@
 [submodule ".solarized"]
 	path = nonstow/solarized/solarized
 	url = https://github.com/altercation/solarized
-[submodule ".vim/bundle/vim-scala"]
-	path = vim/.vim/bundle/vim-scala
-	url = https://github.com/derekwyatt/vim-scala
-[submodule ".vim/bundle/nerdtree"]
-	path = vim/.vim/bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree
-[submodule ".vim/bundle/ctrlp"]
-	path = vim/.vim/bundle/ctrlp
-	url = https://github.com/kien/ctrlp.vim
 [submodule ".vim/bundle/nerdcommenter"]
 	path = .vim/bundle/nerdcommenter
 	url = https://github.com/crooloose/nerdcommenter
-[submodule ".vim/bundle/vim-surround"]
-	path = vim/.vim/bundle/vim-surround
-	url = https://github.com/tpope/vim-surround
-[submodule ".vim/bundle/vim-abolish"]
-	path = vim/.vim/bundle/vim-abolish
-	url = https://github.com/tpope/vim-abolish
-[submodule ".vim/bundle/vim-commentary"]
-	path = vim/.vim/bundle/vim-commentary
-	url = https://github.com/tpope/vim-commentary
 [submodule ".gnome-terminal-colors-solarized"]
 	path = nonstow/solarized/gnome-terminal-colors-solarized
 	url = https://github.com/sigurdga/gnome-terminal-colors-solarized.git
 [submodule ".vim/bundle/argtextobj"]
 	path = .vim/bundle/argtextobj
 	url = https://github.com/vim-scripts/argtextobj.vim.git
-[submodule ".vim/bundle/ultisnips"]
-	path = vim/.vim/bundle/ultisnips
-	url = https://github.com/SirVer/ultisnips.git
 [submodule ".fzf"]
 	path = nonstow/fzf
 	url = https://github.com/junegunn/fzf.git
 [submodule ".zsh_custom/zsh-syntax-highlighting"]
 	path = zsh/.zsh_custom/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
-[submodule ".vim/bundle/argumentative"]
-	path = vim/.vim/bundle/argumentative
-	url = https://github.com/PeterRincker/vim-argumentative
-[submodule ".vim/bundle/vim-flake8"]
-	path = vim/.vim/bundle/vim-flake8
-	url = git@github.com:nvie/vim-flake8.git
 [submodule "stowfiles/solarized/dircolors-solarized"]
 	path = nonstow/solarized/dircolors-solarized
 	url = git@github.com:seebi/dircolors-solarized.git
 [submodule "spacemacs/.emacs.d"]
 	path = spacemacs/.emacs.d
 	url = git@github.com:syl20bnr/spacemacs.git
-[submodule "vim/.vim/bundle/ycm"]
-	path = vim/.vim/bundle/ycm
-	url = git@github.com:Valloric/YouCompleteMe.git
-[submodule "vim/.vim/bundle/ale"]
-	path = vim/.vim/bundle/ale
-	url = git@github.com:w0rp/ale.git
 [submodule "vim/.vim/bundle/fzf.vim"]
 	path = vim/.vim/bundle/fzf.vim
 	url = git@github.com:junegunn/fzf.vim.git
-[submodule "vim/.vim/bundle/vim-go"]
-	path = vim/.vim/bundle/vim-go
-	url = https://github.com/fatih/vim-go.git
-[submodule "vim/.vim/bundle/typescript-vim"]
-	path = vim/.vim/bundle/typescript-vim
-	url = https://github.com/leafgarland/typescript-vim.git
-[submodule "vim/.vim/bundle/vim-localvimrc"]
-	path = vim/.vim/bundle/vim-localvimrc
-	url = https://github.com/embear/vim-localvimrc
 [submodule "nvim/.config/nvim/pack/general/start/lazy"]
 	path = nvim/.local/share/nvim/lazy
 	url = https://github.com/folke/lazy.nvim.git
