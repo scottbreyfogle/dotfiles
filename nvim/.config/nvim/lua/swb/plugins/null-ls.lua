@@ -11,7 +11,6 @@ return {
             -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
             sources = {
                 -- JS linter
-                null_ls.builtins.diagnostics.eslint,
                 null_ls.builtins.formatting.prettier,
                 -- GH Actions linter
                 null_ls.builtins.diagnostics.actionlint,
