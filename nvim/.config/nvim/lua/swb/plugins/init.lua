@@ -4,7 +4,12 @@ return {
     'tpope/vim-repeat',
     'tpope/vim-unimpaired',
     'tpope/vim-rhubarb',
-    'github/copilot.vim',
+    {
+        'mbbill/undotree',
+        config = function()
+            vim.keymap.set('n', '<leader>ut', vim.cmd.UndotreeToggle)
+        end
+    },
 
     -- TODO:
     -- lualine?
