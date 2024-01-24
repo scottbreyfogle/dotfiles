@@ -27,28 +27,26 @@ vim.keymap.set('n', '<leader><space>', vim.cmd.nohlsearch)
 -- Formatting
 vim.keymap.set('n', '<leader>f', vim.cmd.Format)
 
--- ' Git
--- nnoremap <leader>gd :Gdiffsplit<cr>
--- nnoremap <leader>gh :GBrowse master%<cr>
--- ' TODO: Find a way to create a visual mapping that searches for the visual selection
--- nnoremap <leader>gg :Glgrep! <c-r><c-w><cr>
--- ' These commands have an optional range, so are remapped in visual and normal mode
--- nnoremap <leader>gb :G blame<cr>
--- vnoremap <leader>gb :G blame<cr>
--- nnoremap <leader>gl :GlLog!<cr>
--- vnoremap <leader>gl :GlLog!<cr>
--- ' NERDTree
--- nnoremap <leader>n :NERDTree<cr>
--- ' Copilot
--- nnoremap <leader>pd :Copilot disable<cr>
--- nnoremap <leader>pe :Copilot enable<cr>
---
+-- Git
+vim.keymap.set('n', '<leader>gd', vim.cmd.Gdiffsplit)
+vim.keymap.set('n', '<leader>gh', function()
+    vim.cmd('GBrowse master%')
+end)
+-- These commands have an optional range, so are remapped in visual and normal mode
+-- TODO: consider converting more to lua?
+vim.keymap.set({ 'n', 'v' }, '<leader>gb', ":G blame<cr>")
+vim.keymap.set({ 'n', 'v' }, '<leader>gl', ":GlLog!<cr>")
+
+-- Display characters for trailing spaces and tabs
+vim.o.listchars = "tab:▸ ,trail:⋅,nbsp:+"
+vim.o.list = true
 
 -- Keep cursor in the middle when navigating
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
 -- Keep cursor in the middle when searching
+-- I'm not convinced I like this. Leaving it commented for now.
 -- vim.keymap.set('n', 'n', 'nzz')
 -- vim.keymap.set('n', 'N', 'Nzz')
 

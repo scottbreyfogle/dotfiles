@@ -28,6 +28,7 @@ local function create_keymaps()
             prompt_title = 'Live Grep in Open Files',
         }
     end
+    -- TODO: Searches for the visual selection?
     vim.keymap.set('n', '<leader>so', telescope_live_grep_open_files, { desc = '[S]earch in [O]pen Files' })
     vim.keymap.set('n', '<leader>ss', require('telescope.builtin').builtin, { desc = '[S]earch [S]elect Telescope' })
     vim.keymap.set('n', '<leader>sf', require('telescope.builtin').git_files, { desc = '[S]earch Git [F]iles' })
