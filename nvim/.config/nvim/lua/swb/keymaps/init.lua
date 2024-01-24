@@ -1,13 +1,17 @@
--- TODO: Make settings and if/else for this
--- System copy/paste over ssh. See https://sunaku.github.io/tmux-yank-osc52.html.
-vim.keymap.set('v', '<leader>c', ':!xclip -f -sel clip<cr>')
-vim.keymap.set('v', '<leader>x', ':!xclip -i -sel clip<cr>')
-vim.keymap.set('n', '<leader>v', ':r!xclip -o -sel clip<cr>')
+local utils = require("swb/utils")
 
--- Normal system copy/paste.
-vim.keymap.set('v', '<leader>c', '"+y')
-vim.keymap.set('v', '<leader>x', '"+x')
-vim.keymap.set('n', '<leader>v', '"+p')
+-- TODO: Make settings and if/else for this
+if utils.is_mac() then
+    -- Mac system copy/paste.
+    vim.keymap.set('v', '<leader>c', '"+y')
+    vim.keymap.set('v', '<leader>x', '"+x')
+    vim.keymap.set('n', '<leader>v', '"+p')
+else
+    -- System copy/paste over ssh. See https://sunaku.github.io/tmux-yank-osc52.html.
+    vim.keymap.set('v', '<leader>c', ':!xclip -f -sel clip<cr>')
+    vim.keymap.set('v', '<leader>x', ':!xclip -i -sel clip<cr>')
+    vim.keymap.set('n', '<leader>v', ':r!xclip -o -sel clip<cr>')
+end
 
 -- Fold toggling with spacebar
 vim.o.foldlevelstart = 20
