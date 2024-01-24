@@ -22,9 +22,6 @@
 [submodule "stowfiles/solarized/dircolors-solarized"]
 	path = nonstow/solarized/dircolors-solarized
 	url = git@github.com:seebi/dircolors-solarized.git
-[submodule "spacemacs/.emacs.d"]
-	path = spacemacs/.emacs.d
-	url = git@github.com:syl20bnr/spacemacs.git
 [submodule "vim/.vim/bundle/fzf.vim"]
 	path = vim/.vim/bundle/fzf.vim
 	url = git@github.com:junegunn/fzf.vim.git
