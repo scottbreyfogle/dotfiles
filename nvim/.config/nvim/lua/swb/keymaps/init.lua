@@ -20,22 +20,12 @@ vim.keymap.set('v', '<space>', 'za', { noremap = true })
 
 -- Clear search highlighting
 vim.keymap.set('n', '<leader><space>', vim.cmd.nohlsearch)
--- nnoremap <leader><space> :nohlsearch<cr>
 -- ' Sort block
 -- nnoremap <leader>sb vip:sort<cr>
-
--- ' YCM tools
--- nnoremap <leader>gt :YcmCompleter GoTo<cr>
--- nnoremap <leader>yc :YcmForceCompileAndDiagnostics<cr>
--- nnoremap <leader>fi :YcmCompleter FixIt<cr>
--- ' FZF
--- ' TODO: Add something for fzf searching buffers
--- nnoremap <leader>z :FZF<cr>
+vim.keymap.set('n', '<leader><space>', vim.cmd.nohlsearch)
 
 -- Formatting
 vim.keymap.set('n', '<leader>f', vim.cmd.Format)
--- autocmd BufWritePre *.go Neoformat
--- autocmd BufWritePre *.py Neoformat
 
 -- ' Git
 -- nnoremap <leader>gd :Gdiffsplit<cr>
@@ -59,8 +49,8 @@ vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
 -- Keep cursor in the middle when searching
-vim.keymap.set('n', 'n', 'nzz')
-vim.keymap.set('n', 'N', 'Nzz')
+-- vim.keymap.set('n', 'n', 'nzz')
+-- vim.keymap.set('n', 'N', 'Nzz')
 
 -- TODO: What binding for paste over?
 -- vim.keymap.set('x', '', '"_dP')
