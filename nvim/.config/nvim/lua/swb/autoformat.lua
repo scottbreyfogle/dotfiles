@@ -11,4 +11,4 @@ end
 
 set_autoformat("*.lua")
 set_autoformat("*.py")
-set_autoformat("*.typescript")
+set_autoformat("*.ts")
