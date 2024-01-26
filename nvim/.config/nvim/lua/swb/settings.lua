@@ -18,6 +18,11 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 -- " Wrap before 100 chars
 vim.opt.textwidth = 99
+-- Display characters for trailing spaces and tabs
+vim.o.listchars = "tab:▸ ,trail:⋅,nbsp:+"
+vim.o.list = true
+-- Don't fold at all when the file is opened
+vim.o.foldlevelstart = 20
 
 --
 -- Command history settings
