@@ -4,6 +4,11 @@ function config()
         completion = {
             completeopt = 'menu,menuone,noinsert',
         },
+        snippet = {
+            expand = function(args)
+                vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+            end
+        },
         mapping = cmp.mapping.preset.insert {
             ['<C-b>'] = cmp.mapping.scroll_docs(-4),
             ['<C-f>'] = cmp.mapping.scroll_docs(4),
@@ -46,5 +51,8 @@ return {
     dependencies = {
         'hrsh7th/cmp-nvim-lsp',
         'hrsh7th/cmp-path',
+        -- I don't currently use the snips, but cmp has some problems without them.
+        'hrsh7th/cmp-vsnip',
+        'hrsh7th/vim-vsnip'
     },
 }
