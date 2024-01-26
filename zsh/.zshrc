@@ -93,10 +93,12 @@ alias -g pg="| egrep"
 alias -g pl="2>&1 | less"
 alias -g pc="| xclip -f -sel clip"
 
-# Edit configs
+# Source config
 alias zre="source ~/.zshrc"
+# Edit files
 alias zrc="$EDITOR ~/.zshrc ~/.before.zshrc ~/.after.zshrc"
 alias vrc="$EDITOR ~/.config/nvim/init.vim ~/.config/nvim/lua/swb/**/*.lua"
+alias vgo='$EDITOR $(git status --porcelain -s | awk '\''{print $2}'\'')'
 
 # History. See http://zsh.sourceforge.net/Guide/zshguide02.html#l18
 HISTSIZE=150000
