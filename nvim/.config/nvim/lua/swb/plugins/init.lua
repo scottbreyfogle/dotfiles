@@ -4,6 +4,7 @@ return {
     'tpope/vim-repeat',
     'tpope/vim-unimpaired',
     'tpope/vim-rhubarb',
+    'farmergreg/vim-lastplace',
     {
         'mbbill/undotree',
         config = function()
