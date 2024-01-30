@@ -38,26 +38,19 @@ local on_attach = function(_, bufnr)
 
     -- Create a command `:Format` local to the LSP buffer
     vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
-        vim.lsp.buf.format()
+        vim.lsp.buf.format({
+            filter = function(client)
+                local blacklist = { "tsserver", "pyright" }
+                for _, val in pairs(blacklist) do
+                    if client.name == val then return false end
+                end
+                return true
+            end
+        })
     end, { desc = 'Format current buffer with LSP' })
 end
 
 local function config()
-    -- Enable the following language servers
-    --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
-    --
-    --  Add any additional override configuration in the following tables. They will be passed to
-    --  the `settings` field of the server config. You must look up that documentation yourself.
-    --
-    --  If you want to override the default filetypes that your language server will attach to you can
-    --  define the property 'filetypes' to the map in question.
-    local servers = {
-        -- clangd = {},
-        -- gopls = {},
-        -- pyright = {},
-        -- tsserver = {},
-    }
-
     -- Setup neovim lua configuration
     require('neodev').setup()
 
@@ -87,8 +80,10 @@ local function config()
             },
         },
     }
-
-
+    lspconfig.clangd.setup {
+        capabilities = capabilities,
+        on_attach = on_attach,
+    }
     -- TODO: probably switch pyright for https://github.com/python-lsp/python-lsp-server
     lspconfig.pyright.setup {
         capabilities = capabilities,
@@ -102,10 +97,6 @@ local function config()
         capabilities = capabilities,
         on_attach = on_attach,
     }
-    lspconfig.clangd.setup {
-        capabilities = capabilities,
-        on_attach = on_attach,
-    }
 end
 
 
@@ -116,10 +107,7 @@ return {
     config = config,
     dependencies = {
         -- Useful status updates for LSP
-        -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
         { 'j-hui/fidget.nvim', opts = {} },
-
-        -- Additional lua configuration, makes nvim stuff amazing!
         'folke/neodev.nvim',
     },
 }

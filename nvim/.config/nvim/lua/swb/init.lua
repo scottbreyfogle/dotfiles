@@ -4,7 +4,7 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = ','
 require("lazy").setup("swb/plugins",
     {
-      root = vim.fn.stdpath 'data' .. '/lazy_packages'
+        root = vim.fn.stdpath 'data' .. '/lazy_packages'
     }
 )
 require("swb/keymaps")
