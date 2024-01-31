@@ -12,7 +12,7 @@ else
     vim.keymap.set('n', '<leader>v', ':r!xclip -o -sel clip<cr>', { desc = 'Paste from xclip' });
 end
 
-vim.keymap.set({ 'n', 'v' }, '<space>', 'za', { noremap = true, desc = 'Toggle folds' });
+vim.keymap.set('n', '<space>', 'za', { noremap = true, desc = 'Toggle folds' });
 vim.keymap.set('n', '<leader><space>', vim.cmd.nohlsearch, { desc = 'Clear highlighting' });
 vim.keymap.set('n', '<leader>sb', "vip<cmd>sort<cr>", { desc = 'Sort current block' });
 vim.keymap.set('n', '<leader>f', vim.cmd.Format, { desc = 'Run formatting' });
