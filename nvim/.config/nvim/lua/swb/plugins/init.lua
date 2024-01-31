@@ -4,6 +4,8 @@ return {
     'tpope/vim-repeat',
     'tpope/vim-unimpaired',
     'tpope/vim-rhubarb',
+    -- Just for coerce to x_case mappings
+    'tpope/vim-abolish',
     'farmergreg/vim-lastplace',
     {
         'mbbill/undotree',
