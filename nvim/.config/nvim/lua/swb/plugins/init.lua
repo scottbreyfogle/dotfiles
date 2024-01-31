@@ -47,6 +47,14 @@ return {
             vim.keymap.set("n", "<leader>tl", function() trouble.toggle("loclist") end, { desc = '[T]rouble [L]oclist' })
             vim.keymap.set("n", "gr", function() require("trouble").toggle("lsp_references") end,
                 { desc = '[G]o to [R]eferences (trouble)' })
+            vim.keymap.set("n", "[R", function() require("trouble").first({skip_groups = true, jump = true}); end,
+                { desc = 'First trouble entry' })
+            vim.keymap.set("n", "[r", function() require("trouble").previous({skip_groups = true, jump = true}); end,
+                { desc = 'Last trouble entry' })
+            vim.keymap.set("n", "]r", function() require("trouble").next({skip_groups = true, jump = true}); end,
+                { desc = 'Next trouble entry' })
+            vim.keymap.set("n", "]R", function() require("trouble").last({skip_groups = true, jump = true}); end,
+                { desc = 'Last trouble entry' })
         end,
-    }
+    },
 }
