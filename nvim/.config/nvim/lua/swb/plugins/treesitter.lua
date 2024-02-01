@@ -28,6 +28,7 @@ return {
                     scope_incremental = '<space>',
                     node_decremental = '<c-space>',
                 },
+                include_surrounding_whitespace = true,
             },
             textobjects = {
                 select = {

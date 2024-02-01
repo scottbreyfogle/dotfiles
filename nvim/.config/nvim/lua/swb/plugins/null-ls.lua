@@ -8,7 +8,7 @@ return {
     config = function()
         local null_ls = require("null-ls")
         null_ls.setup({
-            -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
+            -- https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md
             sources = {
                 -- JS formatter
                 null_ls.builtins.formatting.prettier,

@@ -58,7 +58,7 @@ local function config()
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-    lspconfig = require('lspconfig')
+    local lspconfig = require('lspconfig')
 
     lspconfig.lua_ls.setup {
         capabilities = capabilities,
