@@ -25,8 +25,6 @@ stow -v 2 -t ~/.config -d nvim .config
 stow -v 2 -t ~/.local/share -d nvim/.local share
 # Install fzf (fuzzy history search)
 nonstow/fzf/install --all
-# Install solarized color scheme in gnome terminal
-nonstow/solarized/gnome-terminal-colors-solarized/install.sh --skip-dircolors -s dark
 # Aftercare:
 # Conda initialization and moving results to .local.zshrc
 # Adding email to .local.gitconfig

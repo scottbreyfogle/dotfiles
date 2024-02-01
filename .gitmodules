@@ -1,9 +1,6 @@
 [submodule ".oh-my-zsh"]
 	path = zsh/.oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh
-[submodule ".solarized"]
-	path = nonstow/solarized/solarized
-	url = https://github.com/altercation/solarized
 [submodule ".vim/bundle/nerdcommenter"]
 	path = .vim/bundle/nerdcommenter
 	url = https://github.com/crooloose/nerdcommenter
@@ -28,3 +25,6 @@
 [submodule "nvim/.config/nvim/pack/general/start/lazy"]
 	path = nvim/.local/share/nvim/lazy
 	url = https://github.com/folke/lazy.nvim.git
+[submodule "nonstow/solarized/tmux-colors-solarized"]
+	path = nonstow/solarized/tmux-colors-solarized
+	url = https://github.com/seebi/tmux-colors-solarized
