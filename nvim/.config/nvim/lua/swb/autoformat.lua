@@ -1,7 +1,7 @@
 local function set_autoformat(pattern)
     vim.api.nvim_create_autocmd('BufWritePre', {
         pattern = pattern,
-        callback = vim.cmd.Format
+        command = "Format",
     });
 end
 
