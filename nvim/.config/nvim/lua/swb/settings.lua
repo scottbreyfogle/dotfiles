@@ -21,11 +21,18 @@ vim.opt.textwidth = 99
 -- Display characters for trailing spaces and tabs
 vim.o.listchars = "tab:▸ ,trail:⋅,nbsp:+"
 vim.o.list = true
--- Fold with treesitter
-vim.o.foldmethod = "expr"
-vim.o.foldexpr = "nvim_treesitter#foldexpr()"
--- Don't fold at all when the file is opened
-vim.o.nofoldenable = true
+
+--
+-- Tab settings
+--
+-- Use Spaces instead of tabs
+vim.opt.expandtab = true
+-- Tabs displayed as 4 spaces (for languages where the default expandtab setting is overridden)
+vim.opt.tabstop = 4
+-- Tab key inserts 4 spaces
+vim.opt.softtabstop = 4
+-- << and >> shift 4 spaces
+vim.opt.shiftwidth = 4
 
 --
 -- Command history settings
