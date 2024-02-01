@@ -1,24 +1,14 @@
 function config()
     local cmp = require 'cmp'
     cmp.setup {
-        completion = {
-            completeopt = 'menu,menuone,noinsert',
-        },
         snippet = {
             expand = function(args)
                 vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
             end
         },
-        mapping = cmp.mapping.preset.insert {
+        mapping = {
             ['<C-b>'] = cmp.mapping.scroll_docs(-4),
             ['<C-f>'] = cmp.mapping.scroll_docs(4),
-            ['<C-Space>'] = cmp.mapping.complete {
-                config = {
-                    sources = {
-                        { name = 'copilot' },
-                    }
-                }
-            },
             -- Use <enter> if the user has made a selection
             ['<CR>'] = cmp.mapping(function(fallback)
                 if cmp.get_active_entry() then
@@ -39,9 +29,16 @@ function config()
         sources = {
             { name = 'nvim_lsp' },
             { name = 'path' },
-            { name = 'copilot' },
-        },
+        }
     }
+    vim.opt.completeopt = 'menu,menuone,preview'
+
+    vim.api.nvim_create_user_command("DisableCmp", function()
+        require("cmp").setup.buffer({ enabled = false })
+    end, {})
+    vim.api.nvim_create_user_command("EnableCmp", function()
+        require("cmp").setup.buffer({ enabled = true })
+    end, {})
 end
 
 return {

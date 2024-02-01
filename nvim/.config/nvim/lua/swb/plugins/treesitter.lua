@@ -21,14 +21,7 @@ return {
             highlight = { enable = true },
             indent = { enable = true },
             incremental_selection = {
-                enable = true,
-                keymaps = {
-                    init_selection = '<c-space>',
-                    node_incremental = '<c-s>',
-                    scope_incremental = '<space>',
-                    node_decremental = '<c-space>',
-                },
-                include_surrounding_whitespace = true,
+                enable = false,
             },
             textobjects = {
                 select = {
