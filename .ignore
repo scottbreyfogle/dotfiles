@@ -1,0 +1,9 @@
+.git
+nonstow/fzf
+nonstow/solarized/dircolors-solarized
+nonstow/solarized/gnome-terminal-colors-solarized
+nonstow/solarized/tmux-colors-solarized
+nvim/.local/share/nvim/lazy
+vim/.vim/bundle/fzf.vim
+zsh/.oh-my-zsh
+zsh/.zsh_custom/plugins/zsh-syntax-highlighting

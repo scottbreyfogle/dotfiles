@@ -1,15 +1,9 @@
 [submodule ".oh-my-zsh"]
 	path = zsh/.oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh
-[submodule ".vim/bundle/nerdcommenter"]
-	path = .vim/bundle/nerdcommenter
-	url = https://github.com/crooloose/nerdcommenter
 [submodule ".gnome-terminal-colors-solarized"]
 	path = nonstow/solarized/gnome-terminal-colors-solarized
 	url = https://github.com/sigurdga/gnome-terminal-colors-solarized.git
-[submodule ".vim/bundle/argtextobj"]
-	path = .vim/bundle/argtextobj
-	url = https://github.com/vim-scripts/argtextobj.vim.git
 [submodule ".fzf"]
 	path = nonstow/fzf
 	url = https://github.com/junegunn/fzf.git
