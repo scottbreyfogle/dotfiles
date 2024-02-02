@@ -35,9 +35,9 @@ local function config()
         },
         mapping = key_mapping("i"),
         sources = {
-            { name = 'nvim_lsp' },
+            { name = 'nvim_lsp', max_item_count = 10 },
+            { name = 'buffer',   max_item_count = 5 },
             { name = 'path' },
-            { name = 'buffer' },
         }
     }
 
