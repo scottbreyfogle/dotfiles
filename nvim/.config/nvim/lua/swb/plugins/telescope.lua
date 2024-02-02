@@ -35,6 +35,9 @@ local function create_keymaps()
     vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
     vim.keymap.set('n', '<leader>sc', builtin.resume, { desc = '[S]earch [C]ontinue' })
     vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
+
+    vim.keymap.set('c', '<c-R>', builtin.command_history, { desc = 'Search history' })
+    vim.keymap.set('c', '<c-T>', builtin.find_files, { desc = 'Find files in cmd' })
 end
 
 -- Fuzzy Finder (files, lsp, etc)
