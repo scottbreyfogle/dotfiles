@@ -35,13 +35,6 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 
 --
--- Command history settings
---
--- Show zsh style autocomplete for : commands
-vim.opt.wildmenu = true
-vim.opt.wildmode = "list:longest"
-
---
 -- Search Options
 --
 -- Intelligent case sensitivity (all lowercase is insensitive, any
