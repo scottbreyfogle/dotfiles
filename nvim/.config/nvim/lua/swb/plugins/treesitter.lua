@@ -1,7 +1,6 @@
 return {
-    'nvim-treesitter/playground',
+    'nvim-treesitter/nvim-treesitter',
     dependencies = {
-        'nvim-treesitter/nvim-treesitter',
         'nvim-treesitter/nvim-treesitter-textobjects',
     },
     build = ':TSUpdate',
@@ -66,7 +65,7 @@ return {
             },
         }
 
-        vim.keymap.set('n', '<leader>tsp', vim.cmd.TSPlaygroundToggle, { desc = 'Toggle [T]ree[s]itter [P]layground' })
+        vim.keymap.set('n', '<leader>tsp', vim.cmd.InspectTree, { desc = 'Inspect treesitter' })
 
         -- Fold with treesitter
         vim.o.foldmethod = "expr"

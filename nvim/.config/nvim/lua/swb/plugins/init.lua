@@ -1,5 +1,4 @@
 return {
-    'fholgado/minibufexpl.vim',
     'tpope/vim-fugitive',
     'tpope/vim-repeat',
     'tpope/vim-unimpaired',
@@ -8,9 +7,16 @@ return {
     'tpope/vim-abolish',
     'farmergreg/vim-lastplace',
     {
+        'fholgado/minibufexpl.vim',
+        config = function()
+            vim.keymap.set('n', '<leader>mb', vim.cmd.MBEToggle, { desc = 'Toggle [M]ini[B]uf Explorer' })
+            vim.api.nvim_create_user_command('Bd', vim.cmd.MBEbd, {})
+        end
+    },
+    {
         'mbbill/undotree',
         config = function()
-            vim.keymap.set('n', '<leader>ut', vim.cmd.UndotreeToggle)
+            vim.keymap.set('n', '<leader>ut', vim.cmd.UndotreeToggle, { desc = 'Toggle [U]ndo [T]ree' })
         end
     },
     {
