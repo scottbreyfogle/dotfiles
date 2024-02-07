@@ -26,16 +26,19 @@ return {
         local suggest = require("copilot.suggestion")
         local map_keymap = require("nvim-mapper").map_keymap
         local copilot_enabled = false
+        local cmp_enabled = true
 
         -- Toggle between cmp autocomplete and copilot. Cmp starts enabled.
         local function toggle_copilot_and_cmp()
             if copilot_enabled then
                 suggest.toggle_auto_trigger()
                 vim.cmd.EnableCmp()
+                cmp_enabled = true
                 copilot_enabled = false
             else
                 suggest.toggle_auto_trigger()
                 vim.cmd.DisableCmp()
+                cmp_enabled = false
                 copilot_enabled = true
             end
         end
@@ -45,12 +48,14 @@ return {
         -- completion to avoid conflicts.
         vim.keymap.set('i', '<c-Space>', function()
             vim.cmd.DisableCmp()
+            cmp_enabled = false
             suggest.next()
         end, { desc = 'Manual Copilot Trigger' });
         vim.api.nvim_create_autocmd('InsertLeave', {
             callback = function()
-                if not copilot_enabled then
+                if not copilot_enabled and not cmp_enabled then
                     vim.cmd.EnableCmp()
+                    cmp_enabled = true
                 end
             end,
         });
