@@ -75,8 +75,6 @@ local function config()
                     vim.env.VIMRUNTIME
                 },
                 telemetry = { enable = false },
-                -- NOTE: toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-                -- diagnostics = { disable = { 'missing-fields' } },
             },
         },
     }
@@ -84,10 +82,11 @@ local function config()
         capabilities = capabilities,
         on_attach = on_attach,
     }
-    -- TODO: probably switch pyright for https://github.com/python-lsp/python-lsp-server
+    -- TODO: Dynamically switch betwen pdm, docker, and vanilla langservers.
     lspconfig.pyright.setup {
         capabilities = capabilities,
         on_attach = on_attach,
+        cmd = { "pdm", "run", "pyright-langserver", "--stdio" },
     }
     lspconfig.gopls.setup {
         capabilities = capabilities,
