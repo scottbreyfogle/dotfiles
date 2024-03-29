@@ -1,24 +1,28 @@
 # Stop the script if any command returns an error.
 set -o errexit
 
-# Create a directory where vim backup files can be stored.
-mkdir -p ~/.vim_files
 # Install tools that are being configured
-sudo apt install git nvim zsh tmux stow
+sudo apt install git zsh tmux stow ripgrep
+# Neovim in Ubuntu 22lts is really old
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+sudo tar -C /opt -xzf nvim-linux64.tar.gz
 
 # git needs to run from this directory
 cd ~/dotfiles
 # Init all submodules
-# TODO: Maybe don't update all of them and just init instead?
-git submodule update --recursive --remote --init
-sudo apt install build-essential python3-dev npm clangd-12 ripgrep
-npm install -g typescript typescript-language-server
+git submodule update --recursive --init
+
+# Installing LSP and linters
+sudo apt install ansible-lint golang npm shellcheck 
+npm install -g prettier pyright typescript typescript-language-server
+pip install black flake8 reorder-python-imports
+go install github.com/rhysd/actionlint/cmd/actionlint@latest
 
 # stow needs to run from this directory
 cd ~/dotfiles
 # Symlink configs in main home directory
 # E.G. ~/.gitconfig -> ~/dotfiles/git/.gitconfig
-stow -v 2 git readline ssh tmux vim zsh
+stow -v 2 git readline ssh tmux vim zsh coder
 # ~/.config/nvim -> ~/dotfiles/nvim/.config/nvim
 stow -v 2 -t ~/.config -d nvim .config
 # ~/.local/share/nvim -> ~/dotfiles/nvim/.local/share/nvim
