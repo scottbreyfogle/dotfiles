@@ -1,9 +1,6 @@
 [include]
     # Allow for config settings that should not be published (e.g. emails) or are machine specific
     path = ~/.gitconfig_local
-	path = ~/.gitconfig_local
-	path = ~/.gitconfig_local
-	path = ~/.gitconfig_local
 [core]
     editor = nvim
     excludesfile = ~/.global_ignore
@@ -34,8 +31,6 @@
     process = git-lfs filter-process
     required = true
 [credential "https://github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
+    helper = !/usr/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
+    helper = !/usr/bin/gh auth git-credential
