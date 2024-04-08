@@ -1,0 +1,4 @@
+# TPM must be git managed. All other plugins are pulled by tpm.
+*
+!.gitignore
+!tpm
