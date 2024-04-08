@@ -7,3 +7,5 @@ sudo tar -C /opt -xzf dotfiles/nvim-linux64.tar.gz
 
 sudo apt install -y ansible-lint
 sudo npm install -g prettier
+
+sudo chsh scott -s /usr/bin/zsh
