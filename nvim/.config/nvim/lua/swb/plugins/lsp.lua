@@ -1,6 +1,8 @@
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(_, bufnr)
+    vim.lsp.set_log_level("debug")
+
     local nmap = function(keys, func, desc)
         if desc then
             desc = 'LSP: ' .. desc
@@ -40,7 +42,7 @@ local on_attach = function(_, bufnr)
     vim.api.nvim_buf_create_user_command(bufnr, 'Format', function()
         vim.lsp.buf.format({
             filter = function(client)
-                local blacklist = { "tsserver", "pyright" }
+                local blacklist = { "ts_ls", "pyright" }
                 for _, val in pairs(blacklist) do
                     if client.name == val then return false end
                 end
@@ -50,7 +52,7 @@ local on_attach = function(_, bufnr)
     end, { desc = 'Format current buffer with LSP' })
 end
 
-local function config()
+local function config_fn()
     -- Setup neovim lua configuration
     require('neodev').setup()
 
@@ -59,6 +61,55 @@ local function config()
     capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
     local lspconfig = require('lspconfig')
+
+    local python_langserver_command = function(root_dir)
+        local function path_starts_with(starts)
+            for _, start in pairs(starts) do
+                if string.sub(root_dir, 1, string.len(start)) == start then return true end
+            end
+            return false
+        end
+
+        local function file_exists(name)
+            local f = io.open(name, "r")
+            if f ~= nil then
+                io.close(f)
+                return true
+            else
+                return false
+            end
+        end
+
+        local function docker_command()
+            local workdir = root_dir:gsub("%/home%/scott%/src%/descript%-ai%-workers%/", "")
+            local image = "us-east4-docker.pkg.dev/descript-dev-infra/ci/" .. workdir .. ":dev-dev"
+            return {
+                "docker",
+                "run",
+                "--rm",       -- Remove docker container after completion
+                "-i",         -- Interactive mode so that nvim can communicate with the server
+                "--pid=host", -- The LSP spec has a condition for langauge servers to shut down when their parent has shut down. This allows the language server to see nvim on the host.
+                "--volume=/home/scott/src/descript-ai-workers:/home/scott/src/descript-ai-workers",
+                "--workdir=" .. root_dir,
+                image,
+                "run",
+                "pyright-langserver",
+                "--stdio",
+            }
+        end
+
+        if path_starts_with({
+                "/home/scott/src/descript-ai-workers/pkg-py",
+                "/home/scott/src/descript-ai-workers/services",
+                "/home/scott/src/descript-ai-workers/tools",
+            }) then
+            if file_exists(root_dir .. "/override.Dockerfile") then
+                return docker_command()
+            end
+            return { "pdm", "run", "pyright-langserver", "--stdio" }
+        end
+        return { "pyright-langserver", "--stdio" }
+    end
 
     lspconfig.lua_ls.setup {
         capabilities = capabilities,
@@ -82,17 +133,18 @@ local function config()
         capabilities = capabilities,
         on_attach = on_attach,
     }
-    -- TODO: Dynamically switch betwen pdm, docker, and vanilla langservers.
     lspconfig.pyright.setup {
         capabilities = capabilities,
         on_attach = on_attach,
-        cmd = { "pdm", "run", "pyright-langserver", "--stdio" },
+        on_new_config = function(new_config, root_dir)
+            new_config.cmd = python_langserver_command(root_dir)
+        end,
     }
     lspconfig.gopls.setup {
         capabilities = capabilities,
         on_attach = on_attach,
     }
-    lspconfig.tsserver.setup {
+    lspconfig.ts_ls.setup {
         capabilities = capabilities,
         on_attach = on_attach,
     }
@@ -103,7 +155,7 @@ return {
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
     priority = 100,
-    config = config,
+    config = config_fn,
     dependencies = {
         -- Useful status updates for LSP
         { 'j-hui/fidget.nvim', opts = {} },
