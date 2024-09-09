@@ -13,6 +13,7 @@ vim.opt.matchpairs = vim.opt.matchpairs + { '<:>' }
 --
 -- Misc display settings
 --
+vim.opt.termguicolors = true
 -- Line Numbering for current line, relative for others
 vim.opt.number = true
 vim.opt.relativenumber = true
