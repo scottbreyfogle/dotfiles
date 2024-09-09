@@ -66,11 +66,5 @@ return {
         }
 
         vim.keymap.set('n', '<leader>tsp', vim.cmd.InspectTree, { desc = 'Inspect treesitter' })
-
-        -- Fold with treesitter
-        vim.o.foldmethod = "expr"
-        vim.o.foldexpr = "nvim_treesitter#foldexpr()"
-        -- Don't fold at all when the file is opened
-        vim.opt.foldenable = false
     end
 }
