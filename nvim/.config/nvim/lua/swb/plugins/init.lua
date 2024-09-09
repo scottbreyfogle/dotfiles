@@ -30,6 +30,8 @@ return {
 
     {
         'maxmx03/solarized.nvim',
+        -- Further versions simply stop working, and it's unclear why
+        tag = 'v3.0.0',
         lazy = false,
         priority = 1000,
         config = function()

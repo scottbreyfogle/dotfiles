@@ -1,6 +1,8 @@
 return {
     -- LSP Configuration & Plugins
     'nvimtools/none-ls.nvim',
+    -- The latest version has problems resolving shellcheck and reorder_python_imports.
+    commit = '912f81829e9ab4ee3d54c3ea5a304c264f0003bc',
     priority = 110,
     dependencies = {
         'nvim-lua/plenary.nvim',
