@@ -1,10 +1,54 @@
 local function config()
-    local cmp = require 'cmp'
+    require("supermaven-nvim").setup({
+        disable_inline_completion = true,
+        disable_keymaps = true,
+    })
+    local cmp = require('cmp')
+    local minuet = require('minuet')
+    local copilot = require('copilot')
+
+    copilot.setup({
+        suggestion = {
+            enabled = false,
+        },
+        panel = {
+            enabled = false,
+        },
+        server_opts_overrides = {
+            settings = {
+                advanced = {
+                    listCount = 2,
+                }
+            },
+        }
+    })
+    require("copilot_cmp").setup()
+
+    minuet.setup {
+        provider = 'openai',
+        add_single_line_entry = false,
+        throttle = 0,
+        debounce = 500,
+        provider_options = {
+            openai = {
+                model = 'gpt-4o-mini',
+                -- model = 'gpt-3.5',
+                optional = {
+                    -- pass any additional parameters you want to send to OpenAI request,
+                    -- e.g.
+                    -- stop = { 'end' },
+                    -- max_tokens = 256,
+                    -- top_p = 0.9,
+                },
+            },
+        }
+    }
 
     local function key_mapping(mode)
         return {
             ['<tab>'] = cmp.mapping(function(fallback)
                 if cmp.visible() then
+                    -- Select=true auto-selects the first entry, if nothing is selected
                     cmp.confirm({ select = true })
                 else
                     fallback()
@@ -35,12 +79,23 @@ local function config()
         },
         mapping = key_mapping("i"),
         sources = {
-            { name = 'nvim_lsp', max_item_count = 10 },
-            { name = 'buffer',   max_item_count = 5 },
+            { name = 'nvim_lsp',  max_item_count = 10 },
+            { name = 'buffer',    max_item_count = 5 },
+            -- Still playing with these. Supermaven is much faster, but unclear of the quality.
+            -- Minuet does not play nice with other completion sources.
+            { name = 'supermaven' },
+            -- { name = 'minuet' },
+            { name = 'copilot' },
             { name = 'path' },
-        }
+        },
+        performance = {
+            -- It is recommended to increase the timeout duration due to
+            -- the typically slower response speed of LLMs compared to
+            -- other completion sources. This is not needed when you only
+            -- need manual completion.
+            fetching_timeout = 2000,
+        },
     }
-
 
     -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
     cmp.setup.cmdline({ '/', '?' }, {
@@ -54,17 +109,12 @@ local function config()
     cmp.setup.cmdline(':', {
         mapping = key_mapping("c"),
         sources = cmp.config.sources({
-            { name = 'path' },
+            -- This is the source for filepath completion. You can ask for it to add slashes
+            -- (option.treat_trailing_slash=false), but then autocompletion won't be triggered on
+            -- accepting the completion.
             { name = 'cmdline' }
         })
     })
-
-    vim.api.nvim_create_user_command("DisableCmp", function()
-        require("cmp").setup.buffer({ enabled = false })
-    end, {})
-    vim.api.nvim_create_user_command("EnableCmp", function()
-        require("cmp").setup.buffer({ enabled = true })
-    end, {})
 
     vim.opt.completeopt = 'menu,menuone,preview'
 end
@@ -74,6 +124,10 @@ return {
     priority = 200,
     config = config,
     dependencies = {
+        'zbirenbaum/copilot-cmp',
+        'zbirenbaum/copilot.lua',
+        'milanglacier/minuet-ai.nvim',
+        'supermaven-inc/supermaven-nvim',
         'hrsh7th/cmp-nvim-lsp',
         'hrsh7th/cmp-path',
         'hrsh7th/cmp-buffer',
