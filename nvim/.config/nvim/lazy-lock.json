@@ -8,6 +8,7 @@
   "copilot-cmp": { "branch": "master", "commit": "b6e5286b3d74b04256d0a7e3bd2908eabec34b44" },
   "copilot.lua": { "branch": "master", "commit": "86537b286f18783f8b67bccd78a4ef4345679625" },
   "fidget.nvim": { "branch": "main", "commit": "d855eed8a06531a7e8fd0684889b2943f373c469" },
+  "lsp_signature.nvim": { "branch": "master", "commit": "a38da0a61c172bb59e34befc12efe48359884793" },
   "minibufexpl.vim": { "branch": "master", "commit": "ad72976ca3df4585d49aa296799f14f3b34cf953" },
   "minuet-ai.nvim": { "branch": "main", "commit": "e96ea460386309bd3d36c13ee9e92e80cf735671" },
   "neodev.nvim": { "branch": "main", "commit": "46aa467dca16cf3dfe27098042402066d2ae242d" },

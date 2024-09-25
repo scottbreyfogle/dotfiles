@@ -38,6 +38,17 @@ return {
         end,
     },
     {
+        "ray-x/lsp_signature.nvim",
+        config = function(_, opts)
+            require('lsp_signature').setup({
+                bind = true, -- This is mandatory, otherwise border config won't get registered.
+                handler_opts = {
+                    border = "rounded"
+                }
+            })
+        end
+    },
+    {
         "folke/trouble.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
