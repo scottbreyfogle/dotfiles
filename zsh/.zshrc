@@ -96,7 +96,7 @@ alias -g pc="| xclip -f -sel clip"
 # Source config
 alias zre="source ~/.zshrc"
 # Edit files
-alias zrc="$EDITOR ~/.zshrc ~/.before.zshrc ~/.after.zshrc"
+alias zrc="$EDITOR ~/.zshrc ~/.*.zshrc"
 alias vrc="$EDITOR ~/.config/nvim/init.vim ~/.config/nvim/lua/swb/**/*.lua"
 alias vgo='$EDITOR $(git status --porcelain -s | awk '\''{print $2}'\'')'
 

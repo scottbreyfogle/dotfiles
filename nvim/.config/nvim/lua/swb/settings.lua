@@ -17,8 +17,6 @@ vim.opt.termguicolors = true
 -- Line Numbering for current line, relative for others
 vim.opt.number = true
 vim.opt.relativenumber = true
--- " Wrap before 100 chars
-vim.opt.textwidth = 99
 -- Display characters for trailing spaces and tabs
 vim.opt.listchars = "tab:▸ ,trail:⋅,nbsp:+"
 vim.opt.list = true
@@ -42,5 +40,5 @@ vim.opt.shiftwidth = 4
 -- capitalization make search case sensitive)
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
--- " Default global substitution on lines
+-- Default global substitution on lines
 vim.opt.gdefault = true
