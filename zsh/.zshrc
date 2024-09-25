@@ -120,3 +120,10 @@ fi
 if [[ -a ~/.local.zshrc ]]; then
   source ~/.local.zshrc
 fi
+
+if [[ -a ~/secrets/openai ]]; then
+  export OPENAI_API_KEY=$(<$HOME/secrets/openai)
+fi
+if [[ -a ~/secrets/anthropic ]]; then
+    export ANTHROPIC_API_KEY=$(<$HOME/secrets/anthropic)
+fi
