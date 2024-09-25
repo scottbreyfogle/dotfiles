@@ -163,6 +163,10 @@ local function config_fn()
     lspconfig.ts_ls.setup {
         capabilities = capabilities,
         on_attach = on_attach,
+        init_options = {
+            hostInfo = 'neovim',
+            maxTsServerMemory = 8192,
+        }
     }
 end
 
