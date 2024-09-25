@@ -54,11 +54,7 @@ return {
         config = function()
             trouble = require("trouble")
             trouble.setup()
-            vim.keymap.set("n", "<leader>t", function() trouble.toggle() end, { desc = '[T]rouble' })
-            vim.keymap.set("n", "<leader>tw", function() trouble.toggle("workspace_diagnostics") end,
-                { desc = '[T]rouble [W]orkspace Diagnoatics' })
-            vim.keymap.set("n", "<leader>td", function() trouble.toggle("document_diagnostics") end,
-                { desc = '[T]rouble [D]ocument Diagnostics' })
+            vim.keymap.set("n", "<leader>t", function() trouble.toggle("diagnostics") end, { desc = '[T]rouble' })
             vim.keymap.set("n", "<leader>tq", function() trouble.toggle("quickfix") end,
                 { desc = '[T]rouble [Q]uickfix' })
             vim.keymap.set("n", "<leader>tl", function() trouble.toggle("loclist") end, { desc = '[T]rouble [L]oclist' })

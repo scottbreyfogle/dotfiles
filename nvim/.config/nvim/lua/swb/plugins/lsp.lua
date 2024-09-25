@@ -21,6 +21,22 @@ local on_attach = function(_, bufnr)
             show_line = false,
         })
     end, '[S]earch [R]eferences')
+    -- Incomplete attempt to search for references to the enclosing function
+    -- nmap('<leader>sre', function()
+    --     ts_utils = require('nvim-treesitter.ts_utils')
+    --     local current_node = ts_utils.get_node_at_cursor()
+
+    --     while current_node do
+    --         if current_node:type() == 'function_definition' then
+    --             break
+    --         end
+    --         current_node = current_node:parent()
+    --     end
+
+    --     if not current_node then return end
+
+    --     local function_name = (ts_utils.get_node_text(current_node:child(1)))[1]
+    -- end, '[S]earch [R]eferences to [E]nclosing Function')
     nmap('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
     nmap('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
     nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
