@@ -76,9 +76,11 @@ return {
         config = function()
             local conform = require("conform")
             conform.setup({
-                python = { "ruff_format", "ruff_organize_imports" },
-                javascript = { "prettier" },
-                typescript = { "prettier" },
+                formatters_by_ft = {
+                    python = { "ruff_format", "ruff_organize_imports" },
+                    javascript = { "prettier" },
+                    typescript = { "prettier" },
+                }
             })
 
             local function Format()
@@ -105,10 +107,11 @@ return {
         config = function()
             local lint = require("lint")
             lint.linters_by_ft = {
-                -- = { "actionlint" },
-                -- = { "ansible_lint" },
-                -- lua = { "luacheck" },
+                bash = { "shellcheck" },
                 python = { "ruff" },
+                sh = { "shellcheck" },
+                terraform = { "tflint" },
+                yaml = { "yamllint", "actionlint" },
             }
             vim.api.nvim_create_autocmd({ "InsertLeave", "BufReadPost", "TextChanged" }, {
                 callback = function()
