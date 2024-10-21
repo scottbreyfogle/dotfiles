@@ -96,9 +96,13 @@ alias -g pc="| xclip -f -sel clip"
 # Source config
 alias zre="source ~/.zshrc"
 # Edit files
-alias zrc="$EDITOR ~/.zshrc ~/.*.zshrc"
+alias zrc="(setopt nullglob && $EDITOR ~/.zshrc ~/.*.zshrc)"
 alias vrc="$EDITOR ~/.config/nvim/init.vim ~/.config/nvim/lua/swb/**/*.lua"
 alias vgo='$EDITOR $(git status --porcelain -s | awk '\''{print $2}'\'')'
+# In Ubuntu, bat is installed as batcat
+if type batcat > /dev/null; then
+    alias bat=batcat
+fi
 
 # History. See http://zsh.sourceforge.net/Guide/zshguide02.html#l18
 HISTSIZE=150000
