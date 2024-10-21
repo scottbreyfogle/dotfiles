@@ -15,7 +15,6 @@ end
 vim.keymap.set('n', '<space>', 'za', { noremap = true, desc = 'Toggle folds' });
 vim.keymap.set('n', '<leader><space>', vim.cmd.nohlsearch, { desc = 'Clear highlighting' });
 vim.keymap.set('n', '<leader>sb', "vip<cmd>sort<cr>", { desc = 'Sort current block' });
-vim.keymap.set('n', '<leader>f', vim.cmd.Format, { desc = 'Run formatting' });
 vim.keymap.set('n', '<leader>gd', vim.cmd.Gdiffsplit, { desc = 'Diff file with version at head (fugitive)' });
 vim.keymap.set('n', '<leader>gh', function()
     vim.cmd('GBrowse master%')

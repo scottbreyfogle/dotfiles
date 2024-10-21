@@ -10,4 +10,3 @@ require("lazy").setup("swb/plugins",
 )
 require("swb/keymaps")
 require("swb/settings")
-require("swb/autoformat")

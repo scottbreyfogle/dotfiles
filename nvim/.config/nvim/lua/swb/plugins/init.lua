@@ -70,4 +70,51 @@ return {
                 { desc = 'Last trouble entry' })
         end,
     },
+    {
+        "stevearc/conform.nvim",
+        opts = {},
+        config = function()
+            local conform = require("conform")
+            conform.setup({
+                python = { "ruff_format", "ruff_organize_imports" },
+                javascript = { "prettier" },
+                typescript = { "prettier" },
+            })
+
+            local function Format()
+                conform.format({ lsp_format = "fallback" })
+            end
+
+            vim.keymap.set('n', '<leader>f', Format, { desc = 'Run formatting' });
+
+            local function set_autoformat(pattern)
+                vim.api.nvim_create_autocmd('BufWritePre', {
+                    pattern = pattern,
+                    callback = Format
+                });
+            end
+
+            set_autoformat("*.lua")
+            set_autoformat("*.py")
+            set_autoformat("*.ts")
+        end
+    },
+    {
+        "mfussenegger/nvim-lint",
+        opts = {},
+        config = function()
+            local lint = require("lint")
+            lint.linters_by_ft = {
+                -- = { "actionlint" },
+                -- = { "ansible_lint" },
+                -- lua = { "luacheck" },
+                python = { "ruff" },
+            }
+            vim.api.nvim_create_autocmd({ "InsertLeave", "BufReadPost", "TextChanged" }, {
+                callback = function()
+                    lint.try_lint()
+                end,
+            })
+        end
+    }
 }
