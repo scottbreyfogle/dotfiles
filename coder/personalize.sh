@@ -11,7 +11,6 @@ sudo apt remove -y neovim fzf
 sudo tar -C /opt -xzf dotfiles/nvim-linux64.tar.gz
 
 # Install other packages
-sudo apt install -y ansible-lint graphviz build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev libxi-dev libglu1-mesa-dev libglew-dev pkg-config
+sudo apt update
+sudo apt install -y bat ansible-lint graphviz build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev libxi-dev libglu1-mesa-dev libglew-dev pkg-config
 sudo npm install -g prettier typescript typescript-language-server
-go install golang.org/x/tools/gopls@latest
-pip install nvitop
