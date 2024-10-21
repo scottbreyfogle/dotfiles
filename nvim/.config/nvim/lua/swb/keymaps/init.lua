@@ -34,3 +34,10 @@ vim.keymap.set({ 'n', 'v' }, '<leader>gl', ":GlLog!<cr>", { desc = 'Open git log
 -- On trial period
 vim.keymap.set('x', 'p', '"_dP', { desc = 'Paste over (visual mode only)' })
 vim.keymap.set('n', '<leader>me', '<cmd>!chmod +x %<cr>', { desc = 'Make current file executable' })
+
+-- [E]dit [l]ocal command - open a file relative to the directory of the open file
+vim.api.nvim_create_user_command('El', function(opts)
+    local dir = vim.fn.expand('%:p:h') -- Get the directory of the current file
+    local file = opts.args
+    vim.cmd('e ' .. dir .. '/' .. file)
+end, { nargs = 1 })
