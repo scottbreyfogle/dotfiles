@@ -84,7 +84,10 @@ alias pg="ps -e | egrep"
 alias ghi="history | grep"
 alias fn="noglob find . -name"
 alias svim="sudo -e"
-alias yapf="python3 $HOME/.yapf/yapf"
+alias ws="bash ~/dotfiles/tmux/tmux_sessions/ws.sh"
+alias scratch="bash ~/dotfiles/tmux/tmux_sessions/scratch.sh"
+alias config="bash ~/dotfiles/tmux/tmux_sessions/config.sh"
+alias prod-db="bash ~/dotfiles/tmux/tmux_sessions/sql.sh"
 
 # Global aliases
 alias -g bry=breyfogle
