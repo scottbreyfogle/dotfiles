@@ -16,7 +16,8 @@ git submodule update --recursive --init
 sudo apt install bat ansible-lint golang npm shellcheck
 sudo npm install -g prettier pyright typescript typescript-language-server
 pip install ruff black flake8 nvitop reorder-python-imports
-go install golang.org/x/tools/gopls@latest github.com/rhysd/actionlint/cmd/actionlint@latest
+go install golang.org/x/tools/gopls@latest
+go install github.com/rhysd/actionlint/cmd/actionlint@latest
 
 # stow needs to run from this directory
 cd ~/dotfiles

@@ -2,7 +2,7 @@
 # For coder workspaces: If only your home directory persists, what things need to be run at startup?
 
 # Quick config
-sudo chsh scott -s /usr/bin/zsh
+sudo chsh descript -s /usr/bin/zsh
 sudo timedatectl set-timezone America/Los_Angeles
 
 # Reinstall neovim, and remove system fzf
