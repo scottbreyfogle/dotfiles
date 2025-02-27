@@ -1,6 +1,7 @@
 # Stop the script if any command returns an error.
 set -o errexit
 
+sudo apt update
 # Install tools that are being configured
 sudo apt install git zsh tmux stow ripgrep
 # Neovim in Ubuntu 22lts is really old

@@ -1,8 +1,6 @@
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(_, bufnr)
-    vim.lsp.set_log_level("debug")
-
     local nmap = function(keys, func, desc)
         if desc then
             desc = 'LSP: ' .. desc
@@ -102,14 +100,14 @@ local function config_fn()
         end
 
         if path_starts_with({
-                "/home/scott/src/descript-ai-workers/pkg-py",
-                "/home/scott/src/descript-ai-workers/services",
-                "/home/scott/src/descript-ai-workers/tools",
+                "/home/descript/src/descript-ai-workers/pkg-py",
+                "/home/descript/src/descript-ai-workers/services",
+                "/home/descript/src/descript-ai-workers/tools",
             }) then
             if file_exists(root_dir .. "/override.Dockerfile") then
                 return docker_command()
             end
-            return { "pdm", "run", "pyright-langserver", "--stdio" }
+            return { "uv", "run", "pyright-langserver", "--stdio" }
         end
         return { "pyright-langserver", "--stdio" }
     end
