@@ -1,12 +1,15 @@
 # Stop the script if any command returns an error.
 set -o errexit
+set -x
 
 sudo apt update
 # Install tools that are being configured
-sudo apt install git zsh tmux stow ripgrep
+sudo apt install -y git zsh tmux stow ripgrep
 # Neovim in Ubuntu 22lts is really old
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
-sudo tar -C /opt -xzf nvim-linux64.tar.gz
+mkdir -p ~/local_vim ~/bin
+curl -L https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz --output ~/local_vim/vim.tar.gz
+tar --directory ~/local_vim -xzf ~/local_vim/vim.tar.gz
+ln -s "$HOME/local_vim/nvim-linux-x86_64/bin/nvim" "$HOME/bin/nvim"
 
 # git needs to run from this directory
 cd ~/dotfiles
@@ -24,6 +27,9 @@ go install github.com/rhysd/actionlint/cmd/actionlint@latest
 cd ~/dotfiles
 # Symlink configs in main home directory
 # E.G. ~/.gitconfig -> ~/dotfiles/git/.gitconfig
+if [ -e ~/.gitconfig ]; then
+    mv ~/.gitconfig ~/.gitconfig.old
+fi
 stow -v 2 git readline ssh tmux vim zsh coder
 # ~/.config/nvim -> ~/dotfiles/nvim/.config/nvim
 stow -v 2 -t ~/.config -d nvim .config

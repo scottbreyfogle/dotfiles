@@ -118,7 +118,7 @@ setopt SHARE_HISTORY # Share history between running shells
 setopt EXTENDED_HISTORY # Store history start and running time.
 setopt HIST_REDUCE_BLANKS # Remove spaces for better deduplication
 # TODO: What's the path for macos?
-export PATH=$PATH:$HOME/bin:$HOME/vim_bin:/opt/nvim-linux64/bin:$HOME/go/bin
+export PATH=$PATH:$HOME/bin:$HOME/vim_bin:$HOME/go/bin
 
 if [[ -a ~/.after.zshrc ]]; then
   source ~/.after.zshrc

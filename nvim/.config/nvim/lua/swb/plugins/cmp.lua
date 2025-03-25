@@ -1,7 +1,7 @@
 local function config()
     local supermaven = require("supermaven-nvim")
     local cmp = require('cmp')
-    local minuet = require('minuet')
+    -- local minuet = require('minuet')
     local copilot = require('copilot')
 
     supermaven.setup({
@@ -26,22 +26,22 @@ local function config()
     })
     require("copilot_cmp").setup()
 
-    minuet.setup {
-        provider = 'claude',
-        add_single_line_entry = false,
-        throttle = 0,
-        debounce = 500,
-        provider_options = {
-            claude = {
-                model = 'claude-3-5-sonnet-20240620',
-                max_tokens = 1024,
-            },
-            openai = {
-                model = 'gpt-4o-mini',
-                -- model = 'gpt-3.5',
-            },
-        }
-    }
+    -- minuet.setup {
+    --     provider = 'claude',
+    --     add_single_line_entry = false,
+    --     throttle = 0,
+    --     debounce = 500,
+    --     provider_options = {
+    --         claude = {
+    --             model = 'claude-3-5-sonnet-20240620',
+    --             max_tokens = 1024,
+    --         },
+    --         openai = {
+    --             model = 'gpt-4o-mini',
+    --             -- model = 'gpt-3.5',
+    --         },
+    --     }
+    -- }
 
     local function key_mapping(mode)
         return {
