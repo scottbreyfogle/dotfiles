@@ -159,6 +159,8 @@ end
 return {
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
+    -- Versions greater than 2.0 require functions only available in nvim >= 0.10
+    tag = 'v1.8.0',
     priority = 100,
     config = config_fn,
     dependencies = {
