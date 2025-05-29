@@ -44,14 +44,6 @@ if command -v dircolors > /dev/null; then
     eval `dircolors ~/dotfiles/nonstow/solarized/dircolors-solarized/dircolors.ansi-dark`
 fi
 
-# Start ssh-agent, once.
-if [ ! -S ~/.ssh/ssh_auth_sock ]; then
-  eval `ssh-agent -s`
-  ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
-fi
-export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
-ssh-add -q
-
 ########################################################
 ################## My Config ###########################
 ########################################################
@@ -102,6 +94,7 @@ alias zre="source ~/.zshrc"
 # Edit files
 alias zrc="(setopt nullglob && $EDITOR ~/.zshrc ~/.*.zshrc)"
 alias vrc="$EDITOR ~/.config/nvim/init.vim ~/.config/nvim/lua/swb/**/*.lua"
+alias xrc="$EDITOR ~/.xmonad/xmonad.hs"
 alias vgo='$EDITOR $(git status --porcelain -s | awk '\''{print $2}'\'')'
 # In Ubuntu, bat is installed as batcat
 if type batcat > /dev/null; then
